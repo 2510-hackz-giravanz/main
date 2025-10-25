@@ -28,3 +28,25 @@ module "secrets" {
   environment = var.environment
   project_name = var.project_name
 }
+
+# Lambda モジュール
+module "lambda" {
+  source = "./modules/lambda"
+  
+  project_name  = var.project_name
+  environment   = var.environment
+  secret_arn    = module.secrets.secret_arn
+  secret_name   = module.secrets.secret_name
+  lambda_timeout = 60
+  lambda_memory  = 512
+}
+
+# API Gateway モジュール
+module "api_gateway" {
+  source = "./modules/api_gateway"
+  
+  project_name         = var.project_name
+  environment          = var.environment
+  lambda_invoke_arn    = module.lambda.invoke_arn
+  lambda_function_name = module.lambda.function_name
+}
