@@ -26,7 +26,7 @@ class DiagnosisResponse(BaseModel):
     """診断レスポンス - 念能力の6系統スコアと診断コメント"""
 
     scores: List[int] = Field(
-        description="6つの念能力系統のスコア（強化系、放出系、変化系、操作系、具現化系、特質系の順）",
+        description="6つの念能力系統のスコア（強化系、変化系、具現化系、特質系、操作系、放出系の順）",
         min_length=6,
         max_length=6,
     )

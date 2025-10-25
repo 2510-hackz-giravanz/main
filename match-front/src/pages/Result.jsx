@@ -26,7 +26,7 @@ export const Result = () => {
     }, [diagnosisResult]);
 
     // レーダーチャート用のデータ
-    const labels = ["強化系", "放出系", "変化系", "操作系", "具現化系", "特質系"];
+    const labels = ["強化系", "変化系", "具現化系", "特質系", "操作系", "放出系"];
     const values = diagnosisResult?.scores || [0, 0, 0, 0, 0, 0];
 
     // 最高スコアの系統を取得
