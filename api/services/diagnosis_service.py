@@ -35,7 +35,7 @@ def diagnose_personality(question_answers: List[QuestionAnswer]) -> DiagnosisRes
 
     # LLM の初期化
     llm = ChatGoogleGenerativeAI(
-        model="gemini-2.5-flash-lite",
+        model="gemini-2.5-flash",
         api_key=api_key,
         temperature=0.7,  # 診断にある程度の多様性を持たせる
     )

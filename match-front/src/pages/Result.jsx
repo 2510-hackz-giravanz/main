@@ -36,11 +36,20 @@ export const Result = () => {
 
     // 選手マッチング
     const [matchedPlayers, setMatchedPlayers] = useState([]);
+    const [isCommentExpanded, setIsCommentExpanded] = useState(false);
 
     useEffect(() => {
         const answers = state?.questionAnswers || [];
         findPlayersByAnswers(answers).then(setMatchedPlayers);
     }, [state?.questionAnswers]);
+
+    // ダミーデータ（後で使用）
+    const guessed = {
+        name: 'FW 佐藤 太郎',
+        message: 'いつも応援ありがとう！次の試合も全力で！',
+        confidence: 0.92,
+        photo: 'https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=800&auto=format&fit=crop',
+    };
 
     return (
         <div style={{
@@ -51,6 +60,38 @@ export const Result = () => {
         }}>
             <div style={{ width: '520px', maxWidth: '100%' }}>
                 <h1 style={{ fontSize: 28, marginBottom: 16, fontWeight: 700 }}>診断結果</h1>
+
+                {/* 既存のダミー表示 */}
+                <div style={{
+                    position: 'relative',
+                    width: '100%',
+                    aspectRatio: '1 / 1',
+                    borderRadius: 16,
+                    overflow: 'hidden',
+                    boxShadow: '0 8px 24px rgba(0,0,0,0.4)',
+                    border: '4px solid #facc15',
+                    marginBottom: 24,
+                }}>
+                    <img
+                        src={guessed.photo}
+                        alt={guessed.name}
+                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    />
+                    <div style={{
+                        position: 'absolute',
+                        bottom: 0,
+                        left: 0,
+                        width: '100%',
+                        background: 'linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0))',
+                        padding: '16px 12px',
+                        boxSizing: 'border-box',
+                        textAlign: 'left'
+                    }}> 
+                        {/* matchedPlayers[0]が存在する場合のみ表示 ? がないとバグるよ！ */}
+                        <div style={{ fontSize: 22, fontWeight: 700 }}>{matchedPlayers[0]?.name}</div>
+                        <div style={{ fontSize: 14, marginTop: 4, opacity: 0.9 }}>{guessed.message}</div>
+                    </div>
+                </div>
 
                 {/* レーダーチャート */}
                 <div style={{ marginBottom: 24 }}>
@@ -94,6 +135,57 @@ export const Result = () => {
                         ))}
                     </div>
                 </div>
+
+                {/* 診断コメント */}
+                {diagnosisResult?.comment && (
+                    <div style={{
+                        background: 'rgba(255,255,255,0.1)',
+                        borderRadius: 16,
+                        padding: '24px',
+                        backdropFilter: 'blur(6px)',
+                        border: '1px solid rgba(255,255,255,0.2)',
+                        marginBottom: 24,
+                        textAlign: 'left'
+                    }}>
+                        <h2 style={{ fontSize: 20, marginBottom: 16, fontWeight: 700 }}>診断コメント</h2>
+                        <div style={{
+                            fontSize: 15,
+                            lineHeight: 1.7,
+                            whiteSpace: 'pre-wrap',
+                            overflow: 'hidden',
+                            textOverflow: 'ellipsis',
+                            display: '-webkit-box',
+                            WebkitLineClamp: isCommentExpanded ? 'unset' : 3,
+                            WebkitBoxOrient: 'vertical',
+                            transition: 'all 0.3s ease'
+                        }}>
+                            {diagnosisResult.comment}
+                        </div>
+                        <button
+                            onClick={() => setIsCommentExpanded(!isCommentExpanded)}
+                            style={{
+                                marginTop: 12,
+                                padding: '8px 16px',
+                                borderRadius: 8,
+                                background: 'rgba(250, 204, 21, 0.2)',
+                                border: '1px solid #facc15',
+                                color: '#facc15',
+                                fontSize: 14,
+                                fontWeight: 600,
+                                cursor: 'pointer',
+                                transition: 'all 0.2s ease'
+                            }}
+                            onMouseEnter={e => {
+                                e.target.style.background = 'rgba(250, 204, 21, 0.3)';
+                            }}
+                            onMouseLeave={e => {
+                                e.target.style.background = 'rgba(250, 204, 21, 0.2)';
+                            }}
+                        >
+                            {isCommentExpanded ? '▲ 閉じる' : '▼ 続きを読む'}
+                        </button>
+                    </div>
+                )}
 
                 {/* 選手マッチング表示 */}
                 {matchedPlayers.length > 0 && (
