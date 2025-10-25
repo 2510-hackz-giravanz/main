@@ -22,6 +22,18 @@ class DiagnosisRequest(BaseModel):
     )
 
 
+class PrimaryDiagnosisResult(BaseModel):
+    """LLMからの診断結果 - 主系統、特質系スコア、理由"""
+
+    primary: str = Field(
+        description="最も適性のある念能力系統（強化系、変化系、具現化系、特質系、操作系、放出系のいずれか）"
+    )
+    specialist_score: int = Field(
+        description="特質系の適性スコア（0-100）", ge=0, le=100
+    )
+    reason: str = Field(description="診断理由と性格分析のコメント")
+
+
 class DiagnosisResponse(BaseModel):
     """診断レスポンス - 念能力の6系統スコアと診断コメント"""
 

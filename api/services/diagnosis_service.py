@@ -1,15 +1,61 @@
 """診断サービス - ユーザーの回答を分析して性格診断を行う"""
 
 import os
-import json
 from typing import List
 from dotenv import load_dotenv
 from langchain_google_genai import ChatGoogleGenerativeAI
 from prompts.diagnosis import get_diagnosis_prompt
-from models.diagnosis import DiagnosisResponse, QuestionAnswer
+from models.diagnosis import DiagnosisResponse, QuestionAnswer, PrimaryDiagnosisResult
 
 # 環境変数を読み込み
 load_dotenv()
+
+
+def calculate_affinities(primary: str, specialist_score: int) -> List[int]:
+    """
+    primaryを基準に親和性スコアを計算
+    
+    Args:
+        primary: 主系統の名前
+        specialist_score: 特質系のスコア（0-100）
+    
+    Returns:
+        List[int]: 6つの系統のスコア配列
+        
+    Raises:
+        ValueError: primaryが無効な系統名の場合
+    """
+    types = ["強化系", "変化系", "具現化系", "特質系", "操作系", "放出系"]
+    
+    if primary not in types:
+        raise ValueError(f"Invalid primary type: {primary}")
+    
+    primary_index = types.index(primary)
+    scores = [0] * 6
+    
+    # 円状配列での距離を計算
+    for i in range(6):
+        # 特質系(index=3)は常にLLMの値を使用
+        if i == 3:
+            scores[i] = specialist_score
+            continue
+        
+        # 円状配列での最短距離を計算
+        distance = min(
+            abs(i - primary_index),
+            6 - abs(i - primary_index)
+        )
+        
+        if distance == 0:
+            scores[i] = 100
+        elif distance == 1:
+            scores[i] = 80
+        elif distance == 2:
+            scores[i] = 60
+        else:  # distance == 3
+            scores[i] = 40
+    
+    return scores
 
 
 def diagnose_personality(question_answers: List[QuestionAnswer]) -> DiagnosisResponse:
@@ -42,7 +88,7 @@ def diagnose_personality(question_answers: List[QuestionAnswer]) -> DiagnosisRes
 
     # プロンプトの取得と構造化出力の設定
     prompt = get_diagnosis_prompt()
-    structured_llm = llm.with_structured_output(DiagnosisResponse)
+    structured_llm = llm.with_structured_output(PrimaryDiagnosisResult)
 
     # チェーンの構築
     chain = prompt | structured_llm
@@ -61,7 +107,7 @@ def diagnose_personality(question_answers: List[QuestionAnswer]) -> DiagnosisRes
     
     for attempt in range(max_retries):
         try:
-            result = chain.invoke({"question_answers": qa_text})
+            result: PrimaryDiagnosisResult = chain.invoke({"question_answers": qa_text})
             
             # Noneが返ってきた場合はリトライ
             if result is None:
@@ -72,8 +118,14 @@ def diagnose_personality(question_answers: List[QuestionAnswer]) -> DiagnosisRes
                 else:
                     raise last_error
             
-            # 正常な結果が返ってきた場合
-            return result
+            # primaryとspecialist_scoreからスコアを計算
+            scores = calculate_affinities(result.primary, result.specialist_score)
+            
+            # DiagnosisResponseを構築して返す
+            return DiagnosisResponse(
+                scores=scores,
+                comment=result.reason
+            )
             
         except Exception as e:
             last_error = e
