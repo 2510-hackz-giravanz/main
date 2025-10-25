@@ -7,17 +7,34 @@ export const Chat = () => {
     const [questions, setQuestions] = useState([]);
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [answers, setAnswers] = useState([]); // インデックス配列に変更
+    const [shuffledChoices, setShuffledChoices] = useState([]); // シャッフルされた選択肢のマッピング
     const [isComplete, setIsComplete] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
 
     const navigate = useNavigate();
 
+    // Fisher-Yatesシャッフルアルゴリズム
+    const shuffleArray = (array) => {
+        const shuffled = [...array];
+        for (let i = shuffled.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+        }
+        return shuffled;
+    };
+
     // 質問データを取得
     useEffect(() => {
         fetchQuestions()
             .then(data => {
                 setQuestions(data);
+                // 各質問の選択肢をシャッフルし、元のインデックスとのマッピングを保存
+                const shuffledMappings = data.map(q => {
+                    const indices = q.choices.map((_, i) => i);
+                    return shuffleArray(indices);
+                });
+                setShuffledChoices(shuffledMappings);
                 setIsLoading(false);
             })
             .catch(err => {
@@ -27,9 +44,12 @@ export const Chat = () => {
     }, []);
 
     const currentQuestion = questions[currentQuestionIndex];
+    const currentShuffledIndices = shuffledChoices[currentQuestionIndex] || [];
 
-    const handleAnswer = (choiceIndex) => {
-        const newAnswers = [...answers, choiceIndex]; // インデックスを保存
+    const handleAnswer = (displayIndex) => {
+        // 表示上のインデックスから元のインデックスに変換
+        const originalIndex = currentShuffledIndices[displayIndex];
+        const newAnswers = [...answers, originalIndex]; // 元のインデックスを保存
         setAnswers(newAnswers);
 
         if (currentQuestionIndex < questions.length - 1) {
@@ -147,10 +167,10 @@ export const Chat = () => {
                         
                         {/* 選択肢 */}
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', alignItems: 'center' }}>
-                            {currentQuestion.choices.map((choice, index) => (
+                            {currentShuffledIndices.map((originalIndex, displayIndex) => (
                                 <button
-                                    key={index}
-                                    onClick={() => handleAnswer(index)}
+                                    key={displayIndex}
+                                    onClick={() => handleAnswer(displayIndex)}
                                     style={{ width: '520px', maxWidth: '100%', height: '3.5rem', fontSize: '1.1rem', background: 'white', color: '#dc2626', border: '2px solid #facc15', borderRadius: '0.5rem', cursor: 'pointer', fontWeight: 'bold', boxShadow: '0 4px 10px rgba(0,0,0,0.2)', transition: 'transform 0.15s ease, box-shadow 0.15s ease' }}
                                     onMouseOver={(e) => {
                                         e.currentTarget.style.transform = 'scale(1.05)';
@@ -161,7 +181,7 @@ export const Chat = () => {
                                         e.currentTarget.style.boxShadow = '0 4px 10px rgba(0,0,0,0.2)';
                                     }}
                                 >
-                                    {choice}
+                                    {currentQuestion.choices[originalIndex]}
                                 </button>
                             ))}
                         </div>
