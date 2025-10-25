@@ -66,7 +66,7 @@ export const Chat = () => {
     };
 
     const handleGoResult = () => {
-        const snapshot = answers.slice();
+        // const snapshot = answers.slice();
 
         // API送信用のデータ形式に変換
         const questionAnswers = answers.map((selectedIndex, i) => ({
