@@ -44,7 +44,10 @@ export const Intro = () => {
                                 justifyContent: 'center',
                             }}
                         >
-                            <span style={{ fontSize: '3rem' }}>🔮</span>
+                            <span style={{ fontSize: '3rem' }}>
+                                <img src="https://www.giravanz.jp/assets/img/common/logo-giravanz.svg" alt="Giravanzロゴ" style={{ width: '3rem', height: '3rem', display: 'block', margin: '0 auto' }} />
+                            </span>
+
                         </div>
                     </div>
                     <h1 style={{ fontSize: '2.2rem', fontWeight: 800, marginBottom: 6 }}>ギラヴァンツ北九州 マッチング</h1>
