@@ -1,19 +1,80 @@
 // src/pages/Loading.jsx
-import { useEffect } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Result } from "./Result";
+import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { submitDiagnosis } from "../lib/api";
 
 export const Loading = () => {
   const { state } = useLocation();
   const navigate = useNavigate();
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    if (!state?.answers) {
+    // questionAnswers が渡されていない場合は Chat に戻す
+    if (!state?.questionAnswers) {
       navigate("/chat", { replace: true });
+      return;
     }
-  }, [navigate, state]);
 
-  
+    // 診断APIを実行
+    submitDiagnosis(state.questionAnswers)
+      .then(diagnosisResult => {
+        // 診断完了後、Result に遷移
+        navigate("/result", { 
+          state: { diagnosisResult },
+          replace: true 
+        });
+      })
+      .catch(err => {
+        console.error('Diagnosis error:', err);
+        setError(err.message);
+      });
+  }, [state, navigate]);
+
+  // エラー時
+  if (error) {
+    return (
+      <div
+        style={{
+          minHeight: "100vh",
+          background: "linear-gradient(to bottom right, #dc2626, #f59e0b, #ea580c)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          padding: 16,
+          color: "white",
+          textAlign: "center",
+        }}
+      >
+        <div style={{ width: "520px", maxWidth: "100%" }}>
+          <h1 style={{ fontSize: 28, marginBottom: 16, fontWeight: 700 }}>エラーが発生しました</h1>
+          <p style={{ color: "#fef9c3", marginBottom: 24 }}>
+            {error}
+          </p>
+
+          <button
+            onClick={() => navigate('/chat')}
+            style={{
+              padding: "0.8rem 1.2rem",
+              borderRadius: 8,
+              border: "2px solid #facc15",
+              background: "linear-gradient(to right, #dc2626, #ea580c)",
+              color: "white",
+              fontWeight: "bold",
+              cursor: "pointer",
+              width: "100%",
+              maxWidth: 360,
+              boxShadow: "0 6px 16px rgba(0,0,0,0.3)",
+            }}
+          >
+            戻る
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+
+  // ローディング中
   return (
     <div
       style={{
@@ -46,24 +107,6 @@ export const Loading = () => {
         <p style={{ color: "#fef9c3", marginBottom: 24 }}>
           AIがあなたの回答をもとに結果を生成しています
         </p>
-
-        <button
-          onClick={() => navigate('/result')}
-          style={{
-            padding: "0.8rem 1.2rem",
-            borderRadius: 8,
-            border: "2px solid #facc15",
-            background: "linear-gradient(to right, #dc2626, #ea580c)",
-            color: "white",
-            fontWeight: "bold",
-            cursor: "pointer",
-            width: "100%",
-            maxWidth: 360,
-            boxShadow: "0 6px 16px rgba(0,0,0,0.3)",
-          }}
-        >
-          結果を見る →
-        </button>
       </div>
 
       <style>{`
