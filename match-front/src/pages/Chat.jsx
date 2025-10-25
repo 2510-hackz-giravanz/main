@@ -59,7 +59,7 @@ export const Chat = () => {
 
     const handleGoResult = () => {
         const snapshot = answers.slice();
-        navigate("/result", { state: { answers: snapshot } })
+        navigate("/loading", { state: { answers: snapshot } })
         handleRestart();
     }
 

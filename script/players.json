@@ -1,0 +1,2366 @@
+[
+  {
+    "id": "01",
+    "name": "Go ITO伊藤 剛",
+    "birth": "1994-03-23",
+    "height": 191,
+    "weight": 86,
+    "from": "埼玉県",
+    "nickname": "ごう",
+    "what_is_soccer": "頑張れる事",
+    "jersey_number_commitment": "ゴールキーパーだけが付けれる番号だから",
+    "pregame_ritual": "掃除",
+    "look_at_my_play": [
+      "守備範囲の広さ",
+      "足元の技術"
+    ],
+    "best_game": {
+      "title": "2022年の全国社会人サッカー大会",
+      "reason": "チームが1つになることを感じたから"
+    },
+    "hero": "川口能活",
+    "personality_one_word": "気分屋",
+    "charm_point": "手が綺麗と言われます",
+    "best_in_team_non_soccer": "頭の大きさ",
+    "motto": "今日を頑張る",
+    "message_to_fans": "熱い応援よろしく願いします。",
+    "status": [
+      {
+        "year": "2012",
+        "club": "FK ZORA",
+        "league": "モンテネグロ・ドルガ",
+        "league_apps": 20,
+        "league_goals": null,
+        "cup_apps": null,
+        "cup_goals": 20
+      }
+    ],
+    "_source": "https://www.giravanz.jp/topteam/staff_player/01.php"
+  },
+  {
+    "id": "04",
+    "name": "Koki HASEGAWA長谷川 光基",
+    "birth": "1999-04-27",
+    "height": 178,
+    "weight": 70,
+    "from": "東京都",
+    "nickname": "ハセ、マセ",
+    "what_is_soccer": "生きがい",
+    "jersey_number_commitment": "セルヒオ・ラモスが好きなので同じ番号",
+    "pregame_ritual": "深呼吸",
+    "look_at_my_play": [
+      "ビルドアップ",
+      "駆け引き"
+    ],
+    "best_game": {
+      "title": "まだ",
+      "reason": "これから作る"
+    },
+    "hero": "父親",
+    "personality_one_word": "ポジティブ",
+    "charm_point": "スマイル",
+    "best_in_team_non_soccer": "足の指の毛",
+    "motto": "人生なんとかなる",
+    "message_to_fans": "絶対に優勝しましょう！",
+    "status": [
+      {
+        "year": "2017",
+        "club": "Ｆ東23",
+        "league": "J3",
+        "league_apps": 20,
+        "league_goals": 1,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "北九州",
+        "league": "J3",
+        "league_apps": 3,
+        "league_goals": 0,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "北九州",
+        "league": "J3",
+        "league_apps": 25,
+        "league_goals": 0,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "北九州",
+        "league": "J3",
+        "league_apps": 15,
+        "league_goals": 1,
+        "cup_apps": 1,
+        "cup_goals": 0
+      }
+    ],
+    "_source": "https://www.giravanz.jp/topteam/staff_player/04.php"
+  },
+  {
+    "id": "06",
+    "name": "Kota HOSHI星 広太",
+    "birth": "1992-07-27",
+    "height": 171,
+    "weight": 63,
+    "from": "神奈川県",
+    "nickname": "こうた",
+    "what_is_soccer": "成長させてくれるもの",
+    "jersey_number_commitment": "特に理由はなし。特別な番号にできるよう頑張ります。",
+    "pregame_ritual": "自分のやるべき事やる",
+    "look_at_my_play": [
+      "運動量",
+      "攻撃に関わる部分"
+    ],
+    "best_game": {
+      "title": "SC相模原時代の2020年最終戦",
+      "reason": "逆転でJ2昇格を決めたから"
+    },
+    "hero": "中村俊輔",
+    "personality_one_word": "穏やか",
+    "charm_point": "特になし",
+    "best_in_team_non_soccer": "優しさ",
+    "motto": "日々成長",
+    "message_to_fans": "シャーレ掲げましょう",
+    "status": [
+      {
+        "year": "2015",
+        "club": "福島",
+        "league": "J3",
+        "league_apps": 28,
+        "league_goals": 1,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2016",
+        "club": "福島",
+        "league": "J3",
+        "league_apps": 28,
+        "league_goals": 5,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2017",
+        "club": "福島",
+        "league": "J3",
+        "league_apps": 32,
+        "league_goals": 7,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2018",
+        "club": "福島",
+        "league": "J3",
+        "league_apps": 18,
+        "league_goals": 2,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2019",
+        "club": "福島",
+        "league": "J3",
+        "league_apps": 33,
+        "league_goals": 4,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "相模原",
+        "league": "J3",
+        "league_apps": 34,
+        "league_goals": 2,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "相模原",
+        "league": "J2",
+        "league_apps": 23,
+        "league_goals": 1,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "鹿児島",
+        "league": "J3",
+        "league_apps": 26,
+        "league_goals": 0,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "鹿児島",
+        "league": "J3",
+        "league_apps": 27,
+        "league_goals": 0,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "鹿児島",
+        "league": "J2",
+        "league_apps": 18,
+        "league_goals": 1,
+        "cup_apps": 2,
+        "cup_goals": 0
+      }
+    ],
+    "_source": "https://www.giravanz.jp/topteam/staff_player/06.php"
+  },
+  {
+    "id": "07",
+    "name": "Ryuki HIRAHARA平原 隆暉",
+    "birth": "2003-05-01",
+    "height": 166,
+    "weight": 58,
+    "from": "埼玉県",
+    "nickname": "りゅうき",
+    "what_is_soccer": "大好きなもの",
+    "jersey_number_commitment": "小さい頃から好きな番号",
+    "pregame_ritual": "散歩",
+    "look_at_my_play": [
+      "献身性"
+    ],
+    "best_game": {
+      "title": "高校時　　選手権二回戦vs京都橘",
+      "reason": "結果を出してアピールできた"
+    },
+    "hero": "イニエスタ",
+    "personality_one_word": "楽",
+    "charm_point": "後頭部の長さ",
+    "best_in_team_non_soccer": "ゴルフの向上心",
+    "motto": "何事も楽しむ",
+    "message_to_fans": "今年もたくさんの応援よろしくお願いします！",
+    "status": [
+      {
+        "year": "2020",
+        "club": "北九州",
+        "league": "J3",
+        "league_apps": 1,
+        "league_goals": 0,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "北九州",
+        "league": "J3",
+        "league_apps": 23,
+        "league_goals": 0,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "北九州",
+        "league": "J3",
+        "league_apps": 17,
+        "league_goals": 0,
+        "cup_apps": 2,
+        "cup_goals": 0
+      }
+    ],
+    "_source": "https://www.giravanz.jp/topteam/staff_player/07.php"
+  },
+  {
+    "id": "08",
+    "name": "Yamato MACHIDA町田 也真人",
+    "birth": "1989-12-19",
+    "height": 167,
+    "weight": 56,
+    "from": "埼玉県",
+    "nickname": "やまと",
+    "what_is_soccer": "人間力を高めるスポーツ",
+    "jersey_number_commitment": "特にはないです",
+    "pregame_ritual": "決まってないです",
+    "look_at_my_play": [
+      "ワンタッチプレー"
+    ],
+    "best_game": {
+      "title": "2022年天皇杯準決勝川崎戦",
+      "reason": "内容はカッコ悪いかもしれないけど、楽しくサッカー出来た。"
+    },
+    "hero": "小野伸二",
+    "personality_one_word": "おだやか",
+    "charm_point": "えがお",
+    "best_in_team_non_soccer": "夜中にトイレに行く回数",
+    "motto": "実力は努力",
+    "message_to_fans": "スタジアムにお友達をたくさん連れて来てください！",
+    "status": [
+      {
+        "year": "2012",
+        "club": "千葉",
+        "league": "J2",
+        "league_apps": 7,
+        "league_goals": 0,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2013",
+        "club": "千葉",
+        "league": "J2",
+        "league_apps": 9,
+        "league_goals": 0,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2014",
+        "club": "千葉",
+        "league": "J2",
+        "league_apps": 27,
+        "league_goals": 0,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2015",
+        "club": "千葉",
+        "league": "J2",
+        "league_apps": 17,
+        "league_goals": 1,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2016",
+        "club": "千葉",
+        "league": "J2",
+        "league_apps": 32,
+        "league_goals": 11,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2017",
+        "club": "千葉",
+        "league": "J2",
+        "league_apps": 36,
+        "league_goals": 6,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2018",
+        "club": "千葉",
+        "league": "J2",
+        "league_apps": 25,
+        "league_goals": 4,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2019",
+        "club": "松本",
+        "league": "J1",
+        "league_apps": 13,
+        "league_goals": 0,
+        "cup_apps": 3,
+        "cup_goals": 1
+      },
+      {
+        "year": "2020",
+        "club": "大分",
+        "league": "J1",
+        "league_apps": 19,
+        "league_goals": 1,
+        "cup_apps": 1,
+        "cup_goals": 0
+      },
+      {
+        "year": "2020",
+        "club": "大分",
+        "league": "J1",
+        "league_apps": 32,
+        "league_goals": 8,
+        "cup_apps": 2,
+        "cup_goals": 0
+      },
+      {
+        "year": "2020",
+        "club": "大分",
+        "league": "J2",
+        "league_apps": 19,
+        "league_goals": 0,
+        "cup_apps": 1,
+        "cup_goals": 0
+      },
+      {
+        "year": "2020",
+        "club": "大分",
+        "league": "J2",
+        "league_apps": 18,
+        "league_goals": 0,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "大分",
+        "league": "J2",
+        "league_apps": 3,
+        "league_goals": 0,
+        "cup_apps": null,
+        "cup_goals": null
+      }
+    ],
+    "_source": "https://www.giravanz.jp/topteam/staff_player/08.php"
+  },
+  {
+    "id": "09",
+    "name": "Shuntaro KAWABE河辺 駿太郎",
+    "birth": "1996-05-26",
+    "height": 166,
+    "weight": 68,
+    "from": "大分県",
+    "nickname": "しゅん、たろう",
+    "what_is_soccer": "人生",
+    "jersey_number_commitment": "覚悟、ストライカーとして優勝に導く決意",
+    "pregame_ritual": "部屋の掃除",
+    "look_at_my_play": [
+      "スピード",
+      "ハードワーク"
+    ],
+    "best_game": {
+      "title": "2024 6月22日　鹿児島vs大分",
+      "reason": "地元の大分トリニータ相手にJ2初ゴールを決め勝利できたから"
+    },
+    "hero": "メッシ",
+    "personality_one_word": "真っ直ぐ",
+    "charm_point": "笑顔",
+    "best_in_team_non_soccer": "コーヒー好き",
+    "motto": "人間万事塞翁が馬",
+    "message_to_fans": "J3優勝しましょう！！",
+    "status": [
+      {
+        "year": "2020",
+        "club": "YS横浜",
+        "league": "J3",
+        "league_apps": 22,
+        "league_goals": 1,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "YS横浜",
+        "league": "J3",
+        "league_apps": 26,
+        "league_goals": 5,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "鹿児島",
+        "league": "J3",
+        "league_apps": 9,
+        "league_goals": 0,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "鹿児島",
+        "league": "J2",
+        "league_apps": 6,
+        "league_goals": 1,
+        "cup_apps": 2,
+        "cup_goals": 0
+      },
+      {
+        "year": "2020",
+        "club": "岩手",
+        "league": "J3",
+        "league_apps": 14,
+        "league_goals": 4,
+        "cup_apps": null,
+        "cup_goals": null
+      }
+    ],
+    "_source": "https://www.giravanz.jp/topteam/staff_player/09.php"
+  },
+  {
+    "id": "10",
+    "name": "Ryo NAGAI永井 龍",
+    "birth": "1991-05-23",
+    "height": 180,
+    "weight": 72,
+    "from": "兵庫県",
+    "nickname": "りょう",
+    "what_is_soccer": "自分の人生を助けてくれるもの",
+    "jersey_number_commitment": "ストライカーの自覚をもっと持つため",
+    "pregame_ritual": "家族への感謝",
+    "look_at_my_play": [
+      "ゴール"
+    ],
+    "best_game": {
+      "title": "2014年の柏レイソル戦",
+      "reason": "J1初ゴールと勝利できたから"
+    },
+    "hero": "永井義文（兄）",
+    "personality_one_word": "クセ",
+    "charm_point": "エラ",
+    "best_in_team_non_soccer": "ファッションの奇抜さ",
+    "motto": "ハッピーワイフ　ハッピーライフ",
+    "message_to_fans": "今シーズンの最後は共に笑いましょう",
+    "status": [
+      {
+        "year": "2010",
+        "club": "Ｃ大阪",
+        "league": "J1",
+        "league_apps": 7,
+        "league_goals": 0,
+        "cup_apps": 0,
+        "cup_goals": 0
+      },
+      {
+        "year": "2011",
+        "club": "Ｃ大阪",
+        "league": "J1",
+        "league_apps": 10,
+        "league_goals": 0,
+        "cup_apps": 0,
+        "cup_goals": 0
+      },
+      {
+        "year": "2012",
+        "club": "Ｃ大阪",
+        "league": "J1",
+        "league_apps": 8,
+        "league_goals": 0,
+        "cup_apps": 5,
+        "cup_goals": 0
+      },
+      {
+        "year": "2012",
+        "club": "パース",
+        "league": "17",
+        "league_apps": 2,
+        "league_goals": 0,
+        "cup_apps": 0,
+        "cup_goals": 20
+      }
+    ],
+    "_source": "https://www.giravanz.jp/topteam/staff_player/10.php"
+  },
+  {
+    "id": "11",
+    "name": "Kohei KIYAMA喜山 康平",
+    "birth": "1988-02-22",
+    "height": 179,
+    "weight": 75,
+    "from": "東京都",
+    "nickname": "コーヘー　キーヤン",
+    "what_is_soccer": "生涯関わるもの",
+    "jersey_number_commitment": "三浦知良さんに憧れた11番、そして池元くんの背負った11番を着けたいと思い着けさせてもらっています",
+    "pregame_ritual": "トイレ掃除",
+    "look_at_my_play": [
+      "魂"
+    ],
+    "best_game": {
+      "title": "小6の全国大会決勝",
+      "reason": "はじめて目標を達成した試合だったから"
+    },
+    "hero": "三浦知良",
+    "personality_one_word": "気難しい",
+    "charm_point": "睫毛の長さ",
+    "best_in_team_non_soccer": "NBA熱",
+    "motto": "前後際断",
+    "message_to_fans": "ギラヴァンツファミリー全員で優勝しましょう",
+    "status": [
+      {
+        "year": "2006",
+        "club": "東京Ｖ",
+        "league": "J2",
+        "league_apps": 1,
+        "league_goals": 0,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2007",
+        "club": "東京Ｖ",
+        "league": "J2",
+        "league_apps": 0,
+        "league_goals": 0,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2007",
+        "club": "岡山",
+        "league": "17",
+        "league_apps": 27,
+        "league_goals": null,
+        "cup_apps": null,
+        "cup_goals": 20
+      }
+    ],
+    "_source": "https://www.giravanz.jp/topteam/staff_player/11.php"
+  },
+  {
+    "id": "13",
+    "name": "Renta HIGASHI東 廉太",
+    "birth": "2004-06-17",
+    "height": 190,
+    "weight": 83,
+    "from": "山口県",
+    "nickname": "レンタ",
+    "what_is_soccer": "人生",
+    "jersey_number_commitment": "昔からの好きな番号",
+    "pregame_ritual": "音楽聴く",
+    "look_at_my_play": [
+      "バッチバチの気迫"
+    ],
+    "best_game": {
+      "title": "ルヴァン杯ジュビロ磐田戦",
+      "reason": "初めてプロのピッチに立った瞬間だから"
+    },
+    "hero": "森重真人選手",
+    "personality_one_word": "誰とでも仲良くなれる自信あります",
+    "charm_point": "身長",
+    "best_in_team_non_soccer": "ビリヤード",
+    "motto": "ぶっ飛び",
+    "message_to_fans": "東廉太です。よろしくお願い致します！",
+    "status": [
+      {
+        "year": "2020",
+        "club": "FC東京",
+        "league": "J1",
+        "league_apps": 0,
+        "league_goals": 0,
+        "cup_apps": 4,
+        "cup_goals": 0
+      },
+      {
+        "year": "2020",
+        "club": "相模原",
+        "league": "J3",
+        "league_apps": 4,
+        "league_goals": 0,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "FC東京",
+        "league": "J1",
+        "league_apps": 0,
+        "league_goals": 0,
+        "cup_apps": 0,
+        "cup_goals": 0
+      }
+    ],
+    "_source": "https://www.giravanz.jp/topteam/staff_player/13.php"
+  },
+  {
+    "id": "14",
+    "name": "Haruki IZAWA井澤 春輝",
+    "birth": "1999-06-14",
+    "height": 178,
+    "weight": 73,
+    "from": "宮崎県",
+    "nickname": "はるき",
+    "what_is_soccer": "生きがい",
+    "jersey_number_commitment": "14が好きだから",
+    "pregame_ritual": "顔を濡らす",
+    "look_at_my_play": [
+      "ミドルシュート"
+    ],
+    "best_game": {
+      "title": "これから作ります",
+      "reason": "これから作ります"
+    },
+    "hero": "親",
+    "personality_one_word": "気分屋",
+    "charm_point": "小さい目",
+    "best_in_team_non_soccer": "気分屋",
+    "motto": "ないです",
+    "message_to_fans": "昇格しましょう",
+    "status": [
+      {
+        "year": "2018",
+        "club": "徳島",
+        "league": "J2",
+        "league_apps": 0,
+        "league_goals": 0,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2019",
+        "club": "徳島",
+        "league": "J2",
+        "league_apps": 0,
+        "league_goals": 0,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "鹿児島",
+        "league": "J3",
+        "league_apps": 4,
+        "league_goals": 0,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "北九州",
+        "league": "J2",
+        "league_apps": 14,
+        "league_goals": 0,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "北九州",
+        "league": "J3",
+        "league_apps": 0,
+        "league_goals": 0,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "北九州",
+        "league": "J3",
+        "league_apps": 12,
+        "league_goals": 0,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "北九州",
+        "league": "J3",
+        "league_apps": 33,
+        "league_goals": 1,
+        "cup_apps": 2,
+        "cup_goals": 0
+      }
+    ],
+    "_source": "https://www.giravanz.jp/topteam/staff_player/14.php"
+  },
+  {
+    "id": "17",
+    "name": "Rimpei OKANO岡野 凜平",
+    "birth": "2000-09-15",
+    "height": 165,
+    "weight": 62,
+    "from": "長崎県",
+    "nickname": "りん",
+    "what_is_soccer": "いきがい",
+    "jersey_number_commitment": "17が1番好き",
+    "pregame_ritual": "ストレッチ",
+    "look_at_my_play": [
+      "どこにでもいる"
+    ],
+    "best_game": {
+      "title": "小学生の頃ダブルハットトリックした試合",
+      "reason": "嬉しかったから"
+    },
+    "hero": "おれたちのヒーロー渡邉颯太",
+    "personality_one_word": "がめつい",
+    "charm_point": "笑顔",
+    "best_in_team_non_soccer": "部屋の綺麗さ",
+    "motto": "栄光に近道なし栄冠に涙あり",
+    "message_to_fans": "J2復帰しましょう！",
+    "status": [
+      {
+        "year": "2020",
+        "club": "北九州",
+        "league": "J3",
+        "league_apps": 30,
+        "league_goals": 0,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "北九州",
+        "league": "J3",
+        "league_apps": 37,
+        "league_goals": 1,
+        "cup_apps": 1,
+        "cup_goals": 0
+      }
+    ],
+    "_source": "https://www.giravanz.jp/topteam/staff_player/17.php"
+  },
+  {
+    "id": "18",
+    "name": "Sota WATANABE渡邉 颯太",
+    "birth": "2002-03-01",
+    "height": 180,
+    "weight": 74,
+    "from": "滋賀県",
+    "nickname": "そうた",
+    "what_is_soccer": "何歳になっても自分を夢中にさせてくれるもの",
+    "jersey_number_commitment": "このクラブで18番をつけていた町野修斗選手のように飛躍する",
+    "pregame_ritual": "ユニフォームに香水をつける",
+    "look_at_my_play": [
+      "ワンタッチゴール"
+    ],
+    "best_game": {
+      "title": "まだない",
+      "reason": "プロの試合でハットトリックをしたいから"
+    },
+    "hero": "岡崎慎司さん",
+    "personality_one_word": "マイペース",
+    "charm_point": "目が茶色い",
+    "best_in_team_non_soccer": "街中を歩くスピード",
+    "motto": "気持ちには引力がある",
+    "message_to_fans": "J2昇格、二桁得点を達成するために出し切るので、一緒に熱く闘ってください！",
+    "status": [
+      {
+        "year": "2020",
+        "club": "北九州",
+        "league": "J3",
+        "league_apps": 16,
+        "league_goals": 1,
+        "cup_apps": 2,
+        "cup_goals": 1
+      }
+    ],
+    "_source": "https://www.giravanz.jp/topteam/staff_player/18.php"
+  },
+  {
+    "id": "19",
+    "name": "Futo YOSHIHARA吉原 楓人",
+    "birth": "2006-09-20",
+    "height": 182,
+    "weight": 73,
+    "from": "千葉県",
+    "nickname": "ふうと",
+    "what_is_soccer": "好きなこと",
+    "jersey_number_commitment": "高校2年生の時につけていた番号",
+    "pregame_ritual": "うどんをたべる",
+    "look_at_my_play": [
+      "ドリブル",
+      "ゴール"
+    ],
+    "best_game": {
+      "title": "高校2年生のクラブユース予選",
+      "reason": "自分が2点とって試合をひっくり返したから"
+    },
+    "hero": "ユースの時の監督",
+    "personality_one_word": "シャイ",
+    "charm_point": "探しています",
+    "best_in_team_non_soccer": "わかんない",
+    "motto": "前をむく",
+    "message_to_fans": "応援よろしくお願いします",
+    "status": [],
+    "_source": "https://www.giravanz.jp/topteam/staff_player/19.php"
+  },
+  {
+    "id": "20",
+    "name": "Asahi YADA矢田 旭",
+    "birth": "1991-04-02",
+    "height": 170,
+    "weight": 66,
+    "from": "三重県",
+    "nickname": "アサヒ",
+    "what_is_soccer": "仕事",
+    "jersey_number_commitment": "ずっとつけている番号",
+    "pregame_ritual": "ない",
+    "look_at_my_play": [
+      "左足"
+    ],
+    "best_game": {
+      "title": "2014年の最終節　浦和戦",
+      "reason": "逆転勝ちして、優勝を阻んだ"
+    },
+    "hero": "メッシ",
+    "personality_one_word": "ポジティブ",
+    "charm_point": "笑顔",
+    "best_in_team_non_soccer": "怒らない",
+    "motto": "日々前進",
+    "message_to_fans": "昇格しましょう！",
+    "status": [
+      {
+        "year": "2014",
+        "club": "名古屋",
+        "league": "J1",
+        "league_apps": 22,
+        "league_goals": 1,
+        "cup_apps": 6,
+        "cup_goals": 1
+      },
+      {
+        "year": "2015",
+        "club": "名古屋",
+        "league": "J1",
+        "league_apps": 34,
+        "league_goals": 1,
+        "cup_apps": 8,
+        "cup_goals": 2
+      },
+      {
+        "year": "2016",
+        "club": "名古屋",
+        "league": "J1",
+        "league_apps": 13,
+        "league_goals": 0,
+        "cup_apps": 5,
+        "cup_goals": 0
+      },
+      {
+        "year": "2017",
+        "club": "名古屋",
+        "league": "J1",
+        "league_apps": 0,
+        "league_goals": 0,
+        "cup_apps": 0,
+        "cup_goals": 0
+      },
+      {
+        "year": "2017",
+        "club": "千葉",
+        "league": "J2",
+        "league_apps": 17,
+        "league_goals": 2,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2018",
+        "club": "千葉",
+        "league": "J2",
+        "league_apps": 40,
+        "league_goals": 2,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2019",
+        "club": "千葉",
+        "league": "J2",
+        "league_apps": 29,
+        "league_goals": 1,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "千葉",
+        "league": "J2",
+        "league_apps": 27,
+        "league_goals": 0,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "千葉",
+        "league": "J2",
+        "league_apps": 14,
+        "league_goals": 0,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "愛媛",
+        "league": "J3",
+        "league_apps": 27,
+        "league_goals": 2,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "愛媛",
+        "league": "J3",
+        "league_apps": 27,
+        "league_goals": 2,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "北九州",
+        "league": "J3",
+        "league_apps": 21,
+        "league_goals": 0,
+        "cup_apps": null,
+        "cup_goals": null
+      }
+    ],
+    "_source": "https://www.giravanz.jp/topteam/staff_player/20.php"
+  },
+  {
+    "id": "21",
+    "name": "Taku USHINOHAMA\n  牛之濵 拓",
+    "birth": "1992-07-14",
+    "height": 172,
+    "weight": 65,
+    "from": "鹿児島県",
+    "nickname": "タク、ウッシー",
+    "what_is_soccer": "生きがい",
+    "jersey_number_commitment": "しっくりくる",
+    "pregame_ritual": "トイレ掃除",
+    "look_at_my_play": [
+      "ハードワーク",
+      "コンビネーション"
+    ],
+    "best_game": {
+      "title": "鹿児島時代の柏戦",
+      "reason": "息子が産まれてすぐゴールを決めれた"
+    },
+    "hero": "ブラジルのロナウド",
+    "personality_one_word": "明るい",
+    "charm_point": "猫背",
+    "best_in_team_non_soccer": "中身のない会話",
+    "motto": "夢中は努力に勝る",
+    "message_to_fans": "みんなでJ2行きましょう！！",
+    "status": [
+      {
+        "year": "2011",
+        "club": "福岡",
+        "league": "J1",
+        "league_apps": 4,
+        "league_goals": 2,
+        "cup_apps": 1,
+        "cup_goals": 0
+      },
+      {
+        "year": "2012",
+        "club": "福岡",
+        "league": "J2",
+        "league_apps": 0,
+        "league_goals": 0,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2013",
+        "club": "福岡",
+        "league": "J2",
+        "league_apps": 11,
+        "league_goals": 1,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2014",
+        "club": "福岡",
+        "league": "J2",
+        "league_apps": 10,
+        "league_goals": 0,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2015",
+        "club": "福岡",
+        "league": "J2",
+        "league_apps": 3,
+        "league_goals": 0,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2016",
+        "club": "盛岡",
+        "league": "J3",
+        "league_apps": 28,
+        "league_goals": 9,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2017",
+        "club": "栃木",
+        "league": "J3",
+        "league_apps": 28,
+        "league_goals": 7,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2018",
+        "club": "栃木",
+        "league": "J2",
+        "league_apps": 15,
+        "league_goals": 2,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2018",
+        "club": "鹿児島",
+        "league": "J3",
+        "league_apps": 11,
+        "league_goals": 1,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2019",
+        "club": "鹿児島",
+        "league": "J2",
+        "league_apps": 37,
+        "league_goals": 7,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "鹿児島",
+        "league": "J3",
+        "league_apps": 30,
+        "league_goals": 8,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "鹿児島",
+        "league": "J3",
+        "league_apps": 4,
+        "league_goals": 0,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "鹿児島",
+        "league": "J3",
+        "league_apps": 21,
+        "league_goals": 0,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "鳥取",
+        "league": "J3",
+        "league_apps": 32,
+        "league_goals": 9,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "北九州",
+        "league": "J3",
+        "league_apps": 33,
+        "league_goals": 2,
+        "cup_apps": null,
+        "cup_goals": null
+      }
+    ],
+    "_source": "https://www.giravanz.jp/topteam/staff_player/21.php"
+  },
+  {
+    "id": "22",
+    "name": "Kaoru YAMAWAKI山脇 樺織",
+    "birth": "2000-12-17",
+    "height": 179,
+    "weight": 71,
+    "from": "東京都",
+    "nickname": "かおる",
+    "what_is_soccer": "C'est la vie!",
+    "jersey_number_commitment": "ギラヴァンツ北九州の22番は山脇と覚えてもらえるようになる。",
+    "pregame_ritual": "水風呂に入る",
+    "look_at_my_play": [
+      "スピード",
+      "スプリント"
+    ],
+    "best_game": {
+      "title": "去年のルヴァンカップ町田戦",
+      "reason": "負けたけど楽しかったから。"
+    },
+    "hero": "父親",
+    "personality_one_word": "感受性豊か",
+    "charm_point": "笑顔",
+    "best_in_team_non_soccer": "ゆっくりご飯を食べる",
+    "motto": "日日是好日",
+    "message_to_fans": "ひとつになってJ2昇格を掴みましょう！",
+    "status": [
+      {
+        "year": "2020",
+        "club": "北九州",
+        "league": "J3",
+        "league_apps": 12,
+        "league_goals": 0,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "北九州",
+        "league": "J3",
+        "league_apps": 29,
+        "league_goals": 1,
+        "cup_apps": 1,
+        "cup_goals": 0
+      }
+    ],
+    "_source": "https://www.giravanz.jp/topteam/staff_player/22.php"
+  },
+  {
+    "id": "23",
+    "name": "Kakeru SAKAMOTO坂本 翔",
+    "birth": "2000-09-06",
+    "height": 174,
+    "weight": 72,
+    "from": "静岡県",
+    "nickname": "さか",
+    "what_is_soccer": "人生そのもの",
+    "jersey_number_commitment": "中学生の時の初めての番号",
+    "pregame_ritual": "香水をつける",
+    "look_at_my_play": [
+      "1対1の対人守備"
+    ],
+    "best_game": {
+      "title": "2024シーズンアウェー金沢戦",
+      "reason": "後半から出て点を決めて引き分けにできたから"
+    },
+    "hero": "TUBE",
+    "personality_one_word": "真面目",
+    "charm_point": "よく笑う",
+    "best_in_team_non_soccer": "穏やかな性格",
+    "motto": "times flies",
+    "message_to_fans": "J2昇格に貢献できるように頑張ります！",
+    "status": [
+      {
+        "year": "2020",
+        "club": "北九州",
+        "league": "J3",
+        "league_apps": 31,
+        "league_goals": 0,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "北九州",
+        "league": "J3",
+        "league_apps": 21,
+        "league_goals": 1,
+        "cup_apps": 1,
+        "cup_goals": 0
+      }
+    ],
+    "_source": "https://www.giravanz.jp/topteam/staff_player/23.php"
+  },
+  {
+    "id": "24",
+    "name": "Mahiro YOSHINAGA吉長 真優",
+    "birth": "2002-03-20",
+    "height": 173,
+    "weight": 70,
+    "from": "東京都",
+    "nickname": "マヒロ、マヒ",
+    "what_is_soccer": "夢",
+    "jersey_number_commitment": "小学生の時つけていた番号",
+    "pregame_ritual": "音楽を聴く",
+    "look_at_my_play": [
+      "ドリブルの仕掛け",
+      "クロス",
+      "シュート"
+    ],
+    "best_game": {
+      "title": "J1で初ゴール決めた試合",
+      "reason": "初ゴールを決めたから"
+    },
+    "hero": "大津祐樹",
+    "personality_one_word": "穏やか",
+    "charm_point": "タレ目",
+    "best_in_team_non_soccer": "負けず嫌い",
+    "motto": "継続は力なり",
+    "message_to_fans": "ギラヴァンツを愛する皆さんが最後笑ってシーズンを終えられるように全力で戦いますので応援よろしくお願いします！",
+    "status": [
+      {
+        "year": "2020",
+        "club": "磐田",
+        "league": "J2",
+        "league_apps": 5,
+        "league_goals": 0,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "磐田",
+        "league": "J1",
+        "league_apps": 18,
+        "league_goals": 1,
+        "cup_apps": 6,
+        "cup_goals": 0
+      },
+      {
+        "year": "2020",
+        "club": "磐田",
+        "league": "J2",
+        "league_apps": 9,
+        "league_goals": 0,
+        "cup_apps": 6,
+        "cup_goals": 0
+      },
+      {
+        "year": "2020",
+        "club": "讃岐",
+        "league": "J3",
+        "league_apps": 3,
+        "league_goals": 0,
+        "cup_apps": null,
+        "cup_goals": null
+      }
+    ],
+    "_source": "https://www.giravanz.jp/topteam/staff_player/24.php"
+  },
+  {
+    "id": "25",
+    "name": "Raiki TSUBOGO坪郷 来紀",
+    "birth": "2004-10-11",
+    "height": 172,
+    "weight": 62,
+    "from": "福岡県北九州市",
+    "nickname": "らいき",
+    "what_is_soccer": "幸せ",
+    "jersey_number_commitment": "名前の当て字",
+    "pregame_ritual": "音楽を聴く",
+    "look_at_my_play": [
+      "ハードワーク　突破"
+    ],
+    "best_game": {
+      "title": "U10の大会",
+      "reason": "初めての優勝"
+    },
+    "hero": "父",
+    "personality_one_word": "最",
+    "charm_point": "笑顔",
+    "best_in_team_non_soccer": "水泳",
+    "motto": "一期一会",
+    "message_to_fans": "点とります！！",
+    "status": [
+      {
+        "year": "2020",
+        "club": "北九州",
+        "league": "J3",
+        "league_apps": 0,
+        "league_goals": 0,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "北九州",
+        "league": "J3",
+        "league_apps": 0,
+        "league_goals": 0,
+        "cup_apps": 1,
+        "cup_goals": 0
+      }
+    ],
+    "_source": "https://www.giravanz.jp/topteam/staff_player/25.php"
+  },
+  {
+    "id": "27",
+    "name": "Yuya TANAKA田中 悠也",
+    "birth": "2000-05-10",
+    "height": 185,
+    "weight": 87,
+    "from": "千葉県",
+    "nickname": "ゆうや",
+    "what_is_soccer": "人生そのもの",
+    "jersey_number_commitment": "1年目に初めてもらった番号なので大事にしてます",
+    "pregame_ritual": "緊張感を受け入れて楽しむことと周りへの感謝を伝えること",
+    "look_at_my_play": [
+      "シュートを止めるところ"
+    ],
+    "best_game": {
+      "title": "去年のルヴァンカップ大分戦",
+      "reason": "あの試合が去年の自分のターニングポイントだったから"
+    },
+    "hero": "自分自身",
+    "personality_one_word": "めちゃくちゃ負けず嫌い",
+    "charm_point": "無し",
+    "best_in_team_non_soccer": "自信",
+    "motto": "なりたい者になれるのはなろうとした者だけ",
+    "message_to_fans": "必ず優勝、昇格します！",
+    "status": [
+      {
+        "year": "2019",
+        "club": "北九州",
+        "league": "J3",
+        "league_apps": 0,
+        "league_goals": 0,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "北九州",
+        "league": "J2",
+        "league_apps": 0,
+        "league_goals": 0,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "北九州",
+        "league": "J2",
+        "league_apps": 17,
+        "league_goals": 0,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "北九州",
+        "league": "J3",
+        "league_apps": 5,
+        "league_goals": 0,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "北九州",
+        "league": "J3",
+        "league_apps": 9,
+        "league_goals": 0,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "北九州",
+        "league": "J3",
+        "league_apps": 26,
+        "league_goals": 0,
+        "cup_apps": 1,
+        "cup_goals": 0
+      }
+    ],
+    "_source": "https://www.giravanz.jp/topteam/staff_player/27.php"
+  },
+  {
+    "id": "28",
+    "name": "Kaito KONOMI木實 快斗",
+    "birth": "2007-02-27",
+    "height": 171,
+    "weight": 68,
+    "from": "熊本県",
+    "nickname": "かいと",
+    "what_is_soccer": "仕事",
+    "jersey_number_commitment": "特になし",
+    "pregame_ritual": "特になし",
+    "look_at_my_play": [
+      "守備の強度"
+    ],
+    "best_game": {
+      "title": "プリンスリーグの前期の東山戦です",
+      "reason": "先制点を取られ負けてる状態で残り15分ぐらいでFWに行き2点決めて逆転したことです"
+    },
+    "hero": "家族です",
+    "personality_one_word": "人見知り",
+    "charm_point": "特にないのでこれから見つけていきたいと思います",
+    "best_in_team_non_soccer": "まだ入ったばっかりなので分かりません",
+    "motto": "人生楽しむ",
+    "message_to_fans": "1年目で分からないことだらけですけど、ギラヴァンツ北九州のＪ3優勝、J2昇格に貢献できるよう頑張りますので応援よろしくお願いします",
+    "status": [],
+    "_source": "https://www.giravanz.jp/topteam/staff_player/28.php"
+  },
+  {
+    "id": "29",
+    "name": "KOH \n\t\t\t\t\t\t    Seung Jin高 昇辰",
+    "birth": "2000-10-10",
+    "height": 172,
+    "weight": 68,
+    "from": "京都府",
+    "nickname": "スンジン",
+    "what_is_soccer": "嫁",
+    "jersey_number_commitment": "肉が大好き",
+    "pregame_ritual": "水をたくさん飲む",
+    "look_at_my_play": [
+      "闘志"
+    ],
+    "best_game": {
+      "title": "福島戦",
+      "reason": "逆転勝ち"
+    },
+    "hero": "高橋隆大",
+    "personality_one_word": "大雑把",
+    "charm_point": "髪の後ろの点々",
+    "best_in_team_non_soccer": "韓国語",
+    "motto": "何かを手に入れるには何かを捨てなければならない",
+    "message_to_fans": "昇格しましょう",
+    "status": [
+      {
+        "year": "2020",
+        "club": "北九州",
+        "league": "J3",
+        "league_apps": 26,
+        "league_goals": 4,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "北九州",
+        "league": "J3",
+        "league_apps": 37,
+        "league_goals": 6,
+        "cup_apps": 1,
+        "cup_goals": 0
+      }
+    ],
+    "_source": "https://www.giravanz.jp/topteam/staff_player/29.php"
+  },
+  {
+    "id": "31",
+    "name": "Koki OTANI大谷 幸輝",
+    "birth": "1989-04-08",
+    "height": 186,
+    "weight": 87,
+    "from": "熊本県",
+    "nickname": "タニ、コウキ",
+    "what_is_soccer": "楽しいこと",
+    "jersey_number_commitment": "ない",
+    "pregame_ritual": "ない",
+    "look_at_my_play": [
+      "ない"
+    ],
+    "best_game": {
+      "title": "勝った試合",
+      "reason": "勝ったから"
+    },
+    "hero": "ももいろクローバーZ",
+    "personality_one_word": "無",
+    "charm_point": "ない",
+    "best_in_team_non_soccer": "ももクロ愛",
+    "motto": "逆境こそチャンス",
+    "message_to_fans": "今年もよろしくお願いします！",
+    "status": [
+      {
+        "year": "2008",
+        "club": "浦和",
+        "league": "J1",
+        "league_apps": 0,
+        "league_goals": 0,
+        "cup_apps": 0,
+        "cup_goals": 0
+      },
+      {
+        "year": "2009",
+        "club": "浦和",
+        "league": "J1",
+        "league_apps": 0,
+        "league_goals": 0,
+        "cup_apps": 0,
+        "cup_goals": 0
+      },
+      {
+        "year": "2010",
+        "club": "浦和",
+        "league": "J1",
+        "league_apps": 0,
+        "league_goals": 0,
+        "cup_apps": 0,
+        "cup_goals": 0
+      },
+      {
+        "year": "2011",
+        "club": "浦和",
+        "league": "J1",
+        "league_apps": 0,
+        "league_goals": 0,
+        "cup_apps": 0,
+        "cup_goals": 0
+      },
+      {
+        "year": "2012",
+        "club": "浦和",
+        "league": "J1",
+        "league_apps": 0,
+        "league_goals": 0,
+        "cup_apps": 0,
+        "cup_goals": 0
+      },
+      {
+        "year": "2013",
+        "club": "浦和",
+        "league": "J1",
+        "league_apps": 0,
+        "league_goals": 0,
+        "cup_apps": 0,
+        "cup_goals": 0
+      },
+      {
+        "year": "2014",
+        "club": "北九州",
+        "league": "J2",
+        "league_apps": 42,
+        "league_goals": 0,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2015",
+        "club": "浦和",
+        "league": "J1",
+        "league_apps": 0,
+        "league_goals": 0,
+        "cup_apps": 2,
+        "cup_goals": 0
+      },
+      {
+        "year": "2016",
+        "club": "浦和",
+        "league": "J1",
+        "league_apps": 0,
+        "league_goals": 0,
+        "cup_apps": 4,
+        "cup_goals": 0
+      },
+      {
+        "year": "2017",
+        "club": "新潟",
+        "league": "J1",
+        "league_apps": 23,
+        "league_goals": 0,
+        "cup_apps": 1,
+        "cup_goals": 0
+      },
+      {
+        "year": "2018",
+        "club": "新潟",
+        "league": "J2",
+        "league_apps": 14,
+        "league_goals": 0,
+        "cup_apps": 3,
+        "cup_goals": 0
+      },
+      {
+        "year": "2019",
+        "club": "新潟",
+        "league": "J2",
+        "league_apps": 42,
+        "league_goals": 0,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "新潟",
+        "league": "J2",
+        "league_apps": 0,
+        "league_goals": 0,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "札幌",
+        "league": "J1",
+        "league_apps": 0,
+        "league_goals": 0,
+        "cup_apps": 4,
+        "cup_goals": 0
+      },
+      {
+        "year": "2020",
+        "club": "札幌",
+        "league": "J1",
+        "league_apps": 4,
+        "league_goals": 0,
+        "cup_apps": 2,
+        "cup_goals": 0
+      },
+      {
+        "year": "2020",
+        "club": "札幌",
+        "league": "J1",
+        "league_apps": 3,
+        "league_goals": 0,
+        "cup_apps": 3,
+        "cup_goals": 0
+      },
+      {
+        "year": "2020",
+        "club": "北九州",
+        "league": "J3",
+        "league_apps": 6,
+        "league_goals": 0,
+        "cup_apps": 1,
+        "cup_goals": 0
+      }
+    ],
+    "_source": "https://www.giravanz.jp/topteam/staff_player/31.php"
+  },
+  {
+    "id": "32",
+    "name": "Fumiya TAKAYANAGI\n  高柳 郁弥",
+    "birth": "2000-10-04",
+    "height": 174,
+    "weight": 65,
+    "from": "埼玉県",
+    "nickname": "フミ",
+    "what_is_soccer": "仕事",
+    "jersey_number_commitment": "一年目につけた番号",
+    "pregame_ritual": "上半身の脱力",
+    "look_at_my_play": [
+      "パス"
+    ],
+    "best_game": {
+      "title": "高校時代のクラブユース準決勝",
+      "reason": "GKがアディショナルタイムにゴールし勝ったから。"
+    },
+    "hero": "父",
+    "personality_one_word": "真面目",
+    "charm_point": "笑顔",
+    "best_in_team_non_soccer": "自炊している数",
+    "motto": "日日是好日",
+    "message_to_fans": "応援よろしくお願いします！",
+    "status": [
+      {
+        "year": "2020",
+        "club": "大宮",
+        "league": "J2",
+        "league_apps": 1,
+        "league_goals": 0,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "大宮",
+        "league": "J2",
+        "league_apps": 36,
+        "league_goals": 1,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "大宮",
+        "league": "J3",
+        "league_apps": 9,
+        "league_goals": 0,
+        "cup_apps": 1,
+        "cup_goals": 0
+      },
+      {
+        "year": "2020",
+        "club": "鳥取",
+        "league": "J3",
+        "league_apps": 15,
+        "league_goals": 2,
+        "cup_apps": null,
+        "cup_goals": null
+      }
+    ],
+    "_source": "https://www.giravanz.jp/topteam/staff_player/32.php"
+  },
+  {
+    "id": "34",
+    "name": "Shoma TAKAYOSHI高吉 正真",
+    "birth": "2000-08-25",
+    "height": 176,
+    "weight": 70,
+    "from": "神奈川県",
+    "nickname": "しょうま　えら",
+    "what_is_soccer": "人生",
+    "jersey_number_commitment": "特になし",
+    "pregame_ritual": "三点倒立、壁競り合い、村さんの張り手",
+    "look_at_my_play": [
+      "球際と熱いプレー"
+    ],
+    "best_game": {
+      "title": "大学4年生の頃インカレの決勝戦",
+      "reason": "その試合で大学で全国制覇をしたから"
+    },
+    "hero": "母親と父親",
+    "personality_one_word": "精神年齢小学生",
+    "charm_point": "えら　襟足",
+    "best_in_team_non_soccer": "歯の食いしばり",
+    "motto": "日々成長",
+    "message_to_fans": "今年こそ優勝して昇格しましょう！",
+    "status": [
+      {
+        "year": "2020",
+        "club": "北九州",
+        "league": "J3",
+        "league_apps": 13,
+        "league_goals": 0,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "北九州",
+        "league": "J3",
+        "league_apps": 36,
+        "league_goals": 1,
+        "cup_apps": 2,
+        "cup_goals": 0
+      }
+    ],
+    "_source": "https://www.giravanz.jp/topteam/staff_player/34.php"
+  },
+  {
+    "id": "37",
+    "name": "Kosei YOSHIDA吉田 晃盛",
+    "birth": "2003-07-17",
+    "height": 175,
+    "weight": 70,
+    "from": "福岡県行橋市",
+    "nickname": "こうせい",
+    "what_is_soccer": "人生",
+    "jersey_number_commitment": "特になし",
+    "pregame_ritual": "自分のいい時のプレーを見ること",
+    "look_at_my_play": [
+      "得点能力"
+    ],
+    "best_game": {
+      "title": "まだない",
+      "reason": "これから作ります"
+    },
+    "hero": "支えてくれている方々",
+    "personality_one_word": "負けず嫌い",
+    "charm_point": "笑顔",
+    "best_in_team_non_soccer": "負けん気",
+    "motto": "日々努力",
+    "message_to_fans": "J3優勝しましょう！！",
+    "status": [],
+    "_source": "https://www.giravanz.jp/topteam/staff_player/37.php"
+  },
+  {
+    "id": "39",
+    "name": "Rissei TANIGUCHI谷口 璃成",
+    "birth": "2003-06-07",
+    "height": 194,
+    "weight": 80,
+    "from": "香川県",
+    "nickname": "リッセイ",
+    "what_is_soccer": "楽しいもの",
+    "jersey_number_commitment": "常に感謝を持つためにサンキュー",
+    "pregame_ritual": "散歩",
+    "look_at_my_play": [
+      "シュートストップ"
+    ],
+    "best_game": {
+      "title": "まだないです",
+      "reason": "ないです"
+    },
+    "hero": "杉山選手",
+    "personality_one_word": "真面目",
+    "charm_point": "足長い",
+    "best_in_team_non_soccer": "身長",
+    "motto": "苦しい時こそ耐える",
+    "message_to_fans": "今年も熱く戦いましょう！",
+    "status": [
+      {
+        "year": "2020",
+        "club": "岡山",
+        "league": "J2",
+        "league_apps": 0,
+        "league_goals": 0,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "岡山",
+        "league": "J2",
+        "league_apps": 0,
+        "league_goals": 0,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "滋賀",
+        "league": "JFL",
+        "league_apps": 0,
+        "league_goals": 0,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "北九州",
+        "league": "J3",
+        "league_apps": 0,
+        "league_goals": 0,
+        "cup_apps": null,
+        "cup_goals": null
+      }
+    ],
+    "_source": "https://www.giravanz.jp/topteam/staff_player/39.php"
+  },
+  {
+    "id": "41",
+    "name": "Mitsuki SUGIMOTO杉本 光希",
+    "birth": "2001-08-17",
+    "height": 181,
+    "weight": 76,
+    "from": "新潟県",
+    "nickname": "みつき",
+    "what_is_soccer": "人生",
+    "jersey_number_commitment": "昨年の24から4と1番が好きなので41にしました。",
+    "pregame_ritual": "いつも通り過ごすこと",
+    "look_at_my_play": [
+      "至近距離からの反応"
+    ],
+    "best_game": {
+      "title": "Jリーグデビュー戦 vs 川崎フロンターレ",
+      "reason": "目標としていたJ1の舞台でプレーすることができたから。"
+    },
+    "hero": "母親",
+    "personality_one_word": "真面目",
+    "charm_point": "安全運転",
+    "best_in_team_non_soccer": "運転の遅さ",
+    "motto": "期待せず、感謝する。",
+    "message_to_fans": "J3優勝、J2昇格を共に成し遂げましょう！",
+    "status": [
+      {
+        "year": "2020",
+        "club": "磐田",
+        "league": "J1",
+        "league_apps": 2,
+        "league_goals": 0,
+        "cup_apps": 0,
+        "cup_goals": 0
+      }
+    ],
+    "_source": "https://www.giravanz.jp/topteam/staff_player/41.php"
+  },
+  {
+    "id": "42",
+    "name": "Tsukasa SERA世良 務",
+    "birth": "2006-04-17",
+    "height": 175,
+    "weight": 67,
+    "from": "福岡県北九州市",
+    "nickname": "つかさ、つか",
+    "what_is_soccer": "恋人",
+    "jersey_number_commitment": "小学校時代に初めてもらった背番号",
+    "pregame_ritual": "うどんたべる",
+    "look_at_my_play": [
+      "スピード",
+      "背後の抜け出し",
+      "仕掛け"
+    ],
+    "best_game": {
+      "title": "天皇杯新潟戦",
+      "reason": "プロデビュー戦だったから"
+    },
+    "hero": "ネイマール",
+    "personality_one_word": "うるさい",
+    "charm_point": "元気",
+    "best_in_team_non_soccer": "若さ",
+    "motto": "全力でサッカー楽しむ",
+    "message_to_fans": "試合でます。応援お願いします",
+    "status": [
+      {
+        "year": "2020",
+        "club": "北九州",
+        "league": "J3",
+        "league_apps": 0,
+        "league_goals": 0,
+        "cup_apps": null,
+        "cup_goals": null
+      }
+    ],
+    "_source": "https://www.giravanz.jp/topteam/staff_player/42.php"
+  },
+  {
+    "id": "44",
+    "name": "Yuma TSUJIOKA辻岡 佑真",
+    "birth": "2001-12-09",
+    "height": 183,
+    "weight": 83,
+    "from": "香川県",
+    "nickname": "ゆうま",
+    "what_is_soccer": "生活の一部",
+    "jersey_number_commitment": "特にない",
+    "pregame_ritual": "曲を聴く",
+    "look_at_my_play": [
+      "ビルドアップ",
+      "ロングフィード。"
+    ],
+    "best_game": {
+      "title": "去年の天皇杯ガンバ大阪戦",
+      "reason": "負けたけど、1番楽しかった試合だから"
+    },
+    "hero": "親",
+    "personality_one_word": "お調子者",
+    "charm_point": "笑顔",
+    "best_in_team_non_soccer": "ベンチプレス",
+    "motto": "継続は力なり",
+    "message_to_fans": "J3優勝しましょう",
+    "status": [
+      {
+        "year": "2020",
+        "club": "いわき",
+        "league": "J2",
+        "league_apps": 7,
+        "league_goals": 0,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "宮崎",
+        "league": "J3",
+        "league_apps": 36,
+        "league_goals": 2,
+        "cup_apps": null,
+        "cup_goals": null
+      }
+    ],
+    "_source": "https://www.giravanz.jp/topteam/staff_player/44.php"
+  },
+  {
+    "id": "49",
+    "name": "Naoya KOMAZAWA駒沢 直哉",
+    "birth": "2002-05-17",
+    "height": 178,
+    "weight": 75,
+    "from": "石川県",
+    "nickname": "なおや",
+    "what_is_soccer": "楽しいこと",
+    "jersey_number_commitment": "横浜FCでつけていたから",
+    "pregame_ritual": "瞑想",
+    "look_at_my_play": [
+      "ゴール"
+    ],
+    "best_game": {
+      "title": "Jデビュー戦",
+      "reason": "勝てたから"
+    },
+    "hero": "父",
+    "personality_one_word": "普通",
+    "charm_point": "特になし",
+    "best_in_team_non_soccer": "整理整頓",
+    "motto": "勝てば官軍、負ければ賊軍",
+    "message_to_fans": "昇格しましょう",
+    "status": [],
+    "_source": "https://www.giravanz.jp/topteam/staff_player/49.php"
+  },
+  {
+    "id": "50",
+    "name": "Koji SUGIYAMA杉山 耕二",
+    "birth": "1998-04-19",
+    "height": 180,
+    "weight": 74,
+    "from": "東京都",
+    "nickname": "スギ",
+    "what_is_soccer": "人生",
+    "jersey_number_commitment": "尊敬する方がつけている番号",
+    "pregame_ritual": "壁とのコンタクト",
+    "look_at_my_play": [
+      "守備時のモビリティ"
+    ],
+    "best_game": {
+      "title": "高校1年時のクラブユース決勝",
+      "reason": "優勝したから"
+    },
+    "hero": "恩師",
+    "personality_one_word": "平凡",
+    "charm_point": "左頬のほくろ、歯並び",
+    "best_in_team_non_soccer": "言葉",
+    "motto": "神は細部に宿る",
+    "message_to_fans": "J3優勝を共に成し遂げましょう！",
+    "status": [
+      {
+        "year": "2020",
+        "club": "東京",
+        "league": "関東1部",
+        "league_apps": 0,
+        "league_goals": 0,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "岡山",
+        "league": "J2",
+        "league_apps": 0,
+        "league_goals": 0,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "東京武蔵野",
+        "league": "JFL",
+        "league_apps": 14,
+        "league_goals": 0,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "大分",
+        "league": "JFL",
+        "league_apps": 24,
+        "league_goals": 3,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "北九州",
+        "league": "J3",
+        "league_apps": 36,
+        "league_goals": 0,
+        "cup_apps": 1,
+        "cup_goals": 0
+      }
+    ],
+    "_source": "https://www.giravanz.jp/topteam/staff_player/50.php"
+  },
+  {
+    "id": "51",
+    "name": "Yutaro SAKASHITA坂下 湧太郎",
+    "birth": "2007-08-06",
+    "height": 170,
+    "weight": 62,
+    "from": "福岡県",
+    "nickname": "ゆう",
+    "what_is_soccer": "人生",
+    "jersey_number_commitment": "クラブが決めてくれました",
+    "pregame_ritual": "ストレッチ",
+    "look_at_my_play": [
+      "ゲームメイク"
+    ],
+    "best_game": {
+      "title": "まだない",
+      "reason": "これからつくります"
+    },
+    "hero": "家族",
+    "personality_one_word": "楽",
+    "charm_point": "笑顔",
+    "best_in_team_non_soccer": "百人一首",
+    "motto": "幸せの物差しは短く",
+    "message_to_fans": "クラブの為に一生懸命戦うので、応援よろしくお願いします！",
+    "status": [],
+    "_source": "https://www.giravanz.jp/topteam/staff_player/51.php"
+  },
+  {
+    "id": "66",
+    "name": "Daigo TAKAHASHI髙橋 大悟",
+    "birth": "1999-04-17",
+    "height": 165,
+    "weight": 60,
+    "from": "鹿児島県",
+    "nickname": "ダイゴ",
+    "what_is_soccer": "楽しいこと",
+    "jersey_number_commitment": "松井蓮之選手と決めた",
+    "pregame_ritual": "なし",
+    "look_at_my_play": [
+      "技術"
+    ],
+    "best_game": {
+      "title": "高校サッカー選手権　鹿児島県決勝　vs鹿児島城西",
+      "reason": "ー"
+    },
+    "hero": "父",
+    "personality_one_word": "ー",
+    "charm_point": "ー",
+    "best_in_team_non_soccer": "ー",
+    "motto": "ー",
+    "message_to_fans": "ただいま！",
+    "status": [
+      {
+        "year": "2018",
+        "club": "清水",
+        "league": "J1",
+        "league_apps": 0,
+        "league_goals": 0,
+        "cup_apps": 5,
+        "cup_goals": 0
+      },
+      {
+        "year": "2019",
+        "club": "清水",
+        "league": "J1",
+        "league_apps": 0,
+        "league_goals": 0,
+        "cup_apps": 3,
+        "cup_goals": 1
+      },
+      {
+        "year": "2019",
+        "club": "北九州",
+        "league": "J3",
+        "league_apps": 14,
+        "league_goals": 7,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "北九州",
+        "league": "J2",
+        "league_apps": 41,
+        "league_goals": 9,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "北九州",
+        "league": "J2",
+        "league_apps": 42,
+        "league_goals": 10,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "清水",
+        "league": "J1",
+        "league_apps": 6,
+        "league_goals": 1,
+        "cup_apps": 4,
+        "cup_goals": 0
+      },
+      {
+        "year": "2020",
+        "club": "町田",
+        "league": "J2",
+        "league_apps": 28,
+        "league_goals": 3,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "町田",
+        "league": "J1",
+        "league_apps": 2,
+        "league_goals": 0,
+        "cup_apps": 1,
+        "cup_goals": 0
+      },
+      {
+        "year": "2020",
+        "club": "大分",
+        "league": "J2",
+        "league_apps": 10,
+        "league_goals": 1,
+        "cup_apps": null,
+        "cup_goals": null
+      }
+    ],
+    "_source": "https://www.giravanz.jp/topteam/staff_player/66.php"
+  },
+  {
+    "id": "99",
+    "name": "Ryonosuke KABAYAMA樺山 諒乃介",
+    "birth": "2002-09-17",
+    "height": 171,
+    "weight": 68,
+    "from": "大阪府",
+    "nickname": "かば",
+    "what_is_soccer": "サッカー",
+    "jersey_number_commitment": "中学校の時につけてたから",
+    "pregame_ritual": "特にない",
+    "look_at_my_play": [
+      "ドリブル"
+    ],
+    "best_game": {
+      "title": "山形の時のホーム徳島戦",
+      "reason": "プレーオフ決まったから"
+    },
+    "hero": "デニスロッドマン",
+    "personality_one_word": "明るい",
+    "charm_point": "髪の毛",
+    "best_in_team_non_soccer": "関西弁",
+    "motto": "人生オールイン",
+    "message_to_fans": "今年1年よろしくお願いします！",
+    "status": [
+      {
+        "year": "2020",
+        "club": "横浜FM",
+        "league": "J1",
+        "league_apps": 5,
+        "league_goals": 0,
+        "cup_apps": 7,
+        "cup_goals": 3
+      },
+      {
+        "year": "2020",
+        "club": "山形",
+        "league": "J2",
+        "league_apps": 16,
+        "league_goals": 2,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "横浜FM",
+        "league": "J1",
+        "league_apps": 7,
+        "league_goals": 0,
+        "cup_apps": 0,
+        "cup_goals": 0
+      },
+      {
+        "year": "2020",
+        "club": "山形",
+        "league": "J2",
+        "league_apps": 15,
+        "league_goals": 2,
+        "cup_apps": null,
+        "cup_goals": null
+      },
+      {
+        "year": "2020",
+        "club": "鳥栖",
+        "league": "J1",
+        "league_apps": 22,
+        "league_goals": 2,
+        "cup_apps": 6,
+        "cup_goals": 1
+      },
+      {
+        "year": "2020",
+        "club": "鳥栖",
+        "league": "J1",
+        "league_apps": 3,
+        "league_goals": 0,
+        "cup_apps": 1,
+        "cup_goals": 0
+      },
+      {
+        "year": "2020",
+        "club": "群馬",
+        "league": "J2",
+        "league_apps": 15,
+        "league_goals": 1,
+        "cup_apps": null,
+        "cup_goals": null
+      }
+    ],
+    "_source": "https://www.giravanz.jp/topteam/staff_player/99.php"
+  }
+]

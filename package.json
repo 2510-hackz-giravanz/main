@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "jsdom": "^27.0.1",
+    "node-fetch": "^3.3.2"
+  }
+}
