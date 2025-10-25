@@ -18,7 +18,7 @@ from models.question import Question
 
 
 def create_sample_questions():
-    """サンプルの質問セットを作成（念系統を意識した質問）"""
+    """サンプルの質問セットを作成（念系統を意識した質問・4択、特質系含む）"""
     questions = [
         Question(
             question_text="試合で劣勢の時、どう行動する？",
@@ -26,7 +26,7 @@ def create_sample_questions():
                 "諦めずに走り続ける",  # 強化系: 愚直な努力
                 "チームメイトを鼓舞する",  # 放出系: 影響を外に
                 "トリッキーなプレーで突破を図る",  # 変化系: 予測不能
-                "戦術を変える提案をする",  # 操作系: 戦略的思考
+                "相手のエースに「一緒にラーメン食べに行こうぜ」と話しかける",  # 特質系: ユニーク
             ],
         ),
         Question(
@@ -35,7 +35,7 @@ def create_sample_questions():
                 "何度も基礎から繰り返し練習する",  # 強化系: 基礎重視
                 "実戦で試しながら覚える",  # 放出系: 実践的
                 "自分なりにアレンジして身につける",  # 変化系: 柔軟性
-                "完璧なフォームをイメージしてから練習する",  # 具現化系: イメージ重視
+                "夢の中で練習して、朝起きたらできるようになっている",  # 特質系: ユニーク
             ],
         ),
         Question(
@@ -43,8 +43,8 @@ def create_sample_questions():
             choices=[
                 "一緒に汗を流して信頼を築く",  # 強化系: 努力で信頼
                 "積極的に声をかけて盛り上げる",  # 放出系: 外向的
-                "その場の雰囲気に合わせて柔軟に対応",  # 変化系: 適応力
                 "役割分担を明確にして協力する",  # 操作系: 組織化
+                "試合前に全員で変なダンスを踊って一体感を生む",  # 特質系: ユニーク
             ],
         ),
         Question(
@@ -52,8 +52,8 @@ def create_sample_questions():
             choices=[
                 "努力が結果につながること",  # 強化系: 努力主義
                 "チーム全体で勝利を目指すこと",  # 放出系: チーム重視
-                "自由な発想でプレーできること",  # 変化系: 創造性
                 "美しいプレーが生まれる瞬間",  # 具現化系: 芸術性
+                "ボールが実は地球の縮小版だと考えると宇宙を感じる",  # 特質系: ユニーク
             ],
         ),
         Question(
@@ -61,8 +61,8 @@ def create_sample_questions():
             choices=[
                 "機能性と耐久性を重視",  # 強化系: 実用性
                 "パフォーマンスが向上するものを選ぶ",  # 放出系: 効果重視
-                "デザインや個性を重視",  # 変化系: 個性
                 "細部までこだわって最適なものを選ぶ",  # 操作系: こだわり
+                "直感で「これだ！」と思ったものを即決",  # 特質系: ユニーク
             ],
         ),
         Question(
@@ -70,8 +70,8 @@ def create_sample_questions():
             choices=[
                 "入念なウォーミングアップで体を温める",  # 強化系: 準備徹底
                 "仲間と声を出して気持ちを高める",  # 放出系: 士気向上
-                "音楽を聴いたり、リラックスして臨む",  # 変化系: 柔軟な準備
                 "理想のプレーを細かくイメージする",  # 具現化系: イメージング
+                "お気に入りの靴下の左右を間違えて履く（ゲン担ぎ）",  # 特質系: ユニーク
             ],
         ),
         Question(
@@ -79,8 +79,8 @@ def create_sample_questions():
             choices=[
                 "次のプレーで取り返すと決意する",  # 強化系: 前向きな努力
                 "声を出して気持ちを切り替える",  # 放出系: 外に発散
-                "気にせず次は違うアプローチを試す",  # 変化系: 柔軟な対応
                 "なぜミスしたか冷静に分析する",  # 操作系: 論理的分析
+                "「これもストーリーの一部だ」と物語の主人公気分になる",  # 特質系: ユニーク
             ],
         ),
         Question(
@@ -88,8 +88,8 @@ def create_sample_questions():
             choices=[
                 "最後まで走り続ける献身的なプレー",  # 強化系: 持久力
                 "正確なパスでチャンスを作るプレー",  # 放出系: パス能力
-                "相手の裏をかく華麗なドリブル",  # 変化系: トリッキー
                 "芸術的で創造性あふれるプレー",  # 具現化系: 芸術性
+                "試合中に突然哲学的な発言をして相手を困惑させるプレー",  # 特質系: ユニーク
             ],
         ),
         Question(
@@ -97,8 +97,8 @@ def create_sample_questions():
             choices=[
                 "努力し続ける力",  # 強化系: 努力
                 "仲間と協力する喜び",  # 放出系: 協調性
-                "柔軟に対応する力",  # 変化系: 適応力
                 "戦略的に考える力",  # 操作系: 戦略思考
+                "人生は丸いボールのように予測不能だという真理",  # 特質系: ユニーク
             ],
         ),
         Question(
@@ -106,8 +106,8 @@ def create_sample_questions():
             choices=[
                 "全員が最後まで全力で戦うサッカー",  # 強化系: 全力
                 "チーム全体が連動する美しいサッカー",  # 放出系: 連携
-                "自由で創造的なサッカー",  # 変化系: 自由
                 "緻密な戦術が機能するサッカー",  # 操作系: 戦術
+                "ルールブックにない新しい遊び方を発明するサッカー",  # 特質系: ユニーク
             ],
         ),
     ]
@@ -216,10 +216,44 @@ def test_diagnosis_pattern_3():
         return False
 
 
+def test_diagnosis_pattern_4():
+    """特質系寄りのパターンをテスト"""
+    print("=" * 60)
+    print("テスト 4: 特質系寄りの回答パターン")
+    print("=" * 60)
+
+    questions = create_sample_questions()
+    # 特質系の選択肢（インデックス3）を多く選ぶパターン
+    answer_indices = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+
+    question_answers = [
+        QuestionAnswer(question=q, selected_choice_index=idx)
+        for q, idx in zip(questions, answer_indices)
+    ]
+
+    try:
+        result = diagnose_personality(question_answers)
+        print(f"✓ 診断成功")
+        print()
+        print("スコア（強化系, 放出系, 変化系, 操作系, 具現化系, 特質系）:")
+        print(f"  {result.scores}")
+        print()
+        print("診断コメント:")
+        print(f"  {result.comment}")
+        print()
+        return True
+    except Exception as e:
+        print(f"✗ エラー: {e}")
+        import traceback
+
+        traceback.print_exc()
+        return False
+
+
 def test_diagnosis_mixed_pattern():
     """バランス型の回答パターンをテスト"""
     print("=" * 60)
-    print("テスト 4: バランス型の回答パターン")
+    print("テスト 5: バランス型の回答パターン")
     print("=" * 60)
 
     questions = create_sample_questions()
@@ -264,6 +298,7 @@ def main():
     results.append(test_diagnosis_pattern_1())
     results.append(test_diagnosis_pattern_2())
     results.append(test_diagnosis_pattern_3())
+    results.append(test_diagnosis_pattern_4())
     results.append(test_diagnosis_mixed_pattern())
 
     # 結果サマリー
