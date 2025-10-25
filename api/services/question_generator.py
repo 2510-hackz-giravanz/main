@@ -2,15 +2,18 @@
 
 import os
 import random
-from dotenv import load_dotenv
 from langchain_google_genai import ChatGoogleGenerativeAI
 
 from models.question import QuestionSet
 from prompts.question_generation import get_question_generation_prompt
 
-
-# 環境変数をロード
-load_dotenv()
+# 環境変数をロード（ローカル開発時のみ）
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    # Lambda環境では dotenv は不要
+    pass
 
 
 def generate_questions(seed: int = None) -> QuestionSet:

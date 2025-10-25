@@ -1,0 +1,13 @@
+# AWS Configuration
+aws_region = "ap-northeast-1"
+
+# Environment
+environment = "dev"
+
+# Project Name
+project_name = "giravanz-match"
+
+# Note: After creating the secret with Terraform, manually add the Google API key:
+# aws secretsmanager put-secret-value \
+#   --secret-id giravanz-match/dev/google-api-key \
+#   --secret-string "YOUR_GOOGLE_API_KEY_HERE"
