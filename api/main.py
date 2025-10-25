@@ -3,7 +3,9 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from services.question_generator import generate_questions
+from services.diagnosis_service import diagnose_personality
 from models.question import QuestionSet
+from models.diagnosis import DiagnosisRequest, DiagnosisResponse
 
 app = FastAPI(
     title="サッカー診断質問生成API",
@@ -47,4 +49,30 @@ async def generate_questions_endpoint():
     except Exception as e:
         # その他のエラー
         raise HTTPException(status_code=500, detail=f"質問生成に失敗しました: {str(e)}")
+
+
+@app.post("/api/diagnosis", response_model=DiagnosisResponse)
+async def diagnose_endpoint(request: DiagnosisRequest):
+    """
+    ユーザーの回答を分析して念能力の6系統を診断する
+    
+    Args:
+        request: 質問、選択肢、ユーザーの回答を含むリクエスト
+    
+    Returns:
+        DiagnosisResponse: 6系統のスコアと診断コメント
+        
+    Raises:
+        HTTPException: API キーが未設定、または診断に失敗した場合
+    """
+    try:
+        result = diagnose_personality(request.question_answers)
+        return result
+    except ValueError as e:
+        # 環境変数未設定などの設定エラー
+        raise HTTPException(status_code=500, detail=f"設定エラー: {str(e)}")
+    except Exception as e:
+        # その他のエラー
+        raise HTTPException(status_code=500, detail=f"診断に失敗しました: {str(e)}")
+
 
