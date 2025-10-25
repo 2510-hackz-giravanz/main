@@ -2,11 +2,16 @@
 
 実行方法:
     cd api
-    ../.venv/bin/python test_question_generator.py
+    .venv/bin/python test/test_question_generator.py
 """
 
 import json
 import sys
+import os
+
+# 親ディレクトリ（api）をPythonパスに追加w
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from services.question_generator import generate_questions
 
 
@@ -35,16 +40,7 @@ def main():
         print("=" * 60)
         print("統計情報")
         print("=" * 60)
-        nen_type_count = {}
-        for question in question_set.questions:
-            for choice in question.choices:
-                nen_type = choice.nen_type
-                nen_type_count[nen_type] = nen_type_count.get(nen_type, 0) + 1
-
         print(f"質問数: {len(question_set.questions)}")
-        print("念能力系統の出現回数:")
-        for nen_type, count in sorted(nen_type_count.items()):
-            print(f"  {nen_type}: {count}回")
         print()
 
         print("✓ テスト完了")
