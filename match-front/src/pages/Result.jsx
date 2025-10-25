@@ -24,7 +24,7 @@ export const Result = () => {
         confidence: 0.92,
         photo: 'https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=800&auto=format&fit=crop',
     };
-    const labels = ["強化系", "変化形", "具現化系", "特質系", "操作系", "放出系"];
+    const labels = ["強化系", "放出系", "変化系", "操作系", "具現化系", "特質系"];
     const values = [82, 76, 68, 74, 80, 90];
 
     return (
