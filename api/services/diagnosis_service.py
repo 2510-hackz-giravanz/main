@@ -35,7 +35,7 @@ def diagnose_personality(question_answers: List[QuestionAnswer]) -> DiagnosisRes
 
     # LLM の初期化
     llm = ChatGoogleGenerativeAI(
-        model="gemini-2.0-flash-exp",
+        model="gemini-2.5-flash-lite",
         api_key=api_key,
         temperature=0.7,  # 診断にある程度の多様性を持たせる
     )
@@ -55,7 +55,33 @@ def diagnose_personality(question_answers: List[QuestionAnswer]) -> DiagnosisRes
         selected_choice = qa.question.choices[qa.selected_choice_index]
         qa_text += f"→ ユーザーの選択: {qa.selected_choice_index} ({selected_choice})\n"
 
-    # 診断実行
-    result = chain.invoke({"question_answers": qa_text})
-
-    return result
+    # 診断実行（リトライ機能付き）
+    max_retries = 3
+    last_error = None
+    
+    for attempt in range(max_retries):
+        try:
+            result = chain.invoke({"question_answers": qa_text})
+            
+            # Noneが返ってきた場合はリトライ
+            if result is None:
+                last_error = Exception(f"LLMが構造化出力の生成に失敗しました（試行 {attempt + 1}/{max_retries}）")
+                if attempt < max_retries - 1:
+                    print(f"警告: {last_error}. リトライします...")
+                    continue
+                else:
+                    raise last_error
+            
+            # 正常な結果が返ってきた場合
+            return result
+            
+        except Exception as e:
+            last_error = e
+            if attempt < max_retries - 1:
+                print(f"エラーが発生しました（試行 {attempt + 1}/{max_retries}）: {e}. リトライします...")
+                continue
+            else:
+                raise Exception(f"診断処理に失敗しました（{max_retries}回試行）: {str(e)}") from e
+    
+    # ここには到達しないはずだが、念のため
+    raise Exception(f"診断処理に失敗しました: {last_error}")
