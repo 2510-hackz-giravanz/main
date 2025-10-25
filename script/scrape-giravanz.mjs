@@ -4,17 +4,14 @@
 import { JSDOM } from "jsdom";
 import fs from "fs/promises";
 
-const BASE = "https://www.giravanz.jp/topteam/staff_player";
-const START = 1;
-const END = 99;
-const DELAY_MS = 400; // サーバーに優しく
+const LIST_URL = "https://www.giravanz.jp/topteam/staff_player/";
+const DELAY_MS = 400;
 const OUTFILE = "players.json";
 
 // -----------------------------------
 // 共通ユーティリティ
 // -----------------------------------
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-const to2 = (n) => String(n).padStart(2, "0");
 
 async function fetchHtml(url) {
   try {
@@ -29,6 +26,84 @@ async function fetchHtml(url) {
 }
 
 const text = (el) => (el ? el.textContent.trim() : null);
+
+// -----------------------------------
+// 一覧ページから選手リストを取得
+// -----------------------------------
+async function fetchPlayerList() {
+  const html = await fetchHtml(LIST_URL);
+  if (!html) {
+    console.error("❌ Failed to fetch player list");
+    return [];
+  }
+
+  const dom = new JSDOM(html);
+  const document = dom.window.document;
+  const players = [];
+
+  // ポジションマッピング
+  const positionMap = {
+    "GK": "GK",
+    "ゴールキーパー": "GK",
+    "DF": "DF",
+    "ディフェンダー": "DF",
+    "MF": "MF",
+    "ミッドフィルダー": "MF",
+    "FW": "FW",
+    "フォワード": "FW",
+    "STAFF": "STAFF",
+    "スタッフ": "STAFF",
+  };
+
+  // h3タグを探してポジションセクションを特定
+  const headings = document.querySelectorAll("h3");
+  
+  for (const heading of headings) {
+    const headingText = heading.textContent.trim();
+    
+    // ポジションを判定
+    let position = null;
+    for (const [key, value] of Object.entries(positionMap)) {
+      if (headingText.includes(key)) {
+        position = value;
+        break;
+      }
+    }
+    
+    if (!position) continue;
+
+    // h3の次の要素から次のh3までのリンクを取得
+    let current = heading.nextElementSibling;
+    while (current && current.tagName !== "H3") {
+      const links = current.querySelectorAll("a[href*='/topteam/staff_player/']");
+      
+      for (const link of links) {
+        const href = link.getAttribute("href");
+        if (!href) continue;
+
+        const url = href.startsWith("http")
+          ? href
+          : `https://www.giravanz.jp${href}`;
+
+        // IDを抽出（01.php, 27.html, coach.php, staff01.php など）
+        const match = href.match(/\/([^\/]+)\.(php|html)$/);
+        const id = match ? match[1] : null;
+
+        if (id && !players.find((p) => p.id === id)) {
+          players.push({
+            id,
+            url,
+            position,
+          });
+        }
+      }
+      
+      current = current.nextElementSibling;
+    }
+  }
+
+  return players;
+}
 
 // -----------------------------------
 // ラベル抽出（dt/dd と td(次行値) 両対応）
@@ -83,6 +158,13 @@ function extractBirthday(document) {
 }
 
 function extractName(document) {
+  const jpElement = document.querySelector(".jp");
+  if (jpElement) {
+    const jpName = jpElement.textContent.trim();
+    if (jpName) return jpName;
+  }
+  
+  // フォールバック: 既存のロジック
   return (
     text(document.querySelector("h1, .playerName, .detail__name, .ttl")) ||
     document.querySelector('meta[property="og:title"]')?.getAttribute("content")?.replace(/\s*\|.*$/, "").trim() ||
@@ -105,6 +187,27 @@ function extractHeightWeight(document) {
 
 function extractFrom(document) {
   return byLabel(document, ["出身地", "出身", "From"]);
+}
+
+function extractDescription(document) {
+  const playerTextElement = document.querySelector('p.p-topteam__player-txt');
+  
+  if (!playerTextElement) {
+    return null;
+  }
+
+  const titleElement = playerTextElement.querySelector('.p-topteam__player-ttl');
+  const title = titleElement ? titleElement.textContent.trim() : null;
+  
+  const fullText = playerTextElement.textContent.trim();
+  const text = title 
+    ? fullText.replace(title, '').trim() 
+    : fullText;
+
+  return {
+    title: title || null,
+    text: text || null,
+  };
 }
 
 const splitList = (s) =>
@@ -245,9 +348,8 @@ export { extractStatus };
 // -----------------------------------
 // 各ページをスクレイピング
 // -----------------------------------
-async function scrapeOne(n) {
-  const id = to2(n);
-  const url = `${BASE}/${id}.php`;
+async function scrapeOne(playerInfo) {
+  const { id, url, position } = playerInfo;
   const html = await fetchHtml(url);
   if (!html) return null;
 
@@ -258,16 +360,19 @@ async function scrapeOne(n) {
   const birth = extractBirthday(document);
   const { height, weight } = extractHeightWeight(document);
   const from = extractFrom(document);
+  const description = extractDescription(document);
   const qa = extractQAs(document);
   const status = extractStatus(document);
 
   return {
     id,
+    position,
     name,
     birth,
     height,
     weight,
     from,
+    description,
     ...qa,
     status,
     _source: url,
@@ -278,14 +383,18 @@ async function scrapeOne(n) {
 // メイン処理
 // -----------------------------------
 (async () => {
+  console.log("🔍 Fetching player list...");
+  const playerList = await fetchPlayerList();
+  console.log(`📋 Found ${playerList.length} players/staff\n`);
+
   const results = [];
-  for (let i = START; i <= END; i++) {
-    const r = await scrapeOne(i);
+  for (const playerInfo of playerList) {
+    const r = await scrapeOne(playerInfo);
     if (r) {
-      console.log(`✅ ok ${to2(i)} -> ${r.name || "NoName"}`);
+      console.log(`✅ ok ${playerInfo.id} [${playerInfo.position}] -> ${r.name || "NoName"}`);
       results.push(r);
     } else {
-      console.log(`⏭️ skip ${to2(i)} (not found)`);
+      console.log(`⏭️ skip ${playerInfo.id} (failed to scrape)`);
     }
     await sleep(DELAY_MS);
   }
