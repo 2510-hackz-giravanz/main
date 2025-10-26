@@ -4,8 +4,8 @@ set -e
 echo "Building Lambda deployment package..."
 
 # 作業ディレクトリ
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
+TERRAFORM_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(dirname "$TERRAFORM_DIR")"
 API_DIR="$PROJECT_ROOT/api"
 BUILD_DIR="$PROJECT_ROOT/build/lambda"
 
