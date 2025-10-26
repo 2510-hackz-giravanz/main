@@ -2,13 +2,17 @@
 
 import os
 from typing import List
-from dotenv import load_dotenv
 from langchain_google_genai import ChatGoogleGenerativeAI
 from prompts.diagnosis import get_diagnosis_prompt
 from models.diagnosis import DiagnosisResponse, QuestionAnswer, PrimaryDiagnosisResult
 
-# 環境変数を読み込み
-load_dotenv()
+# 環境変数を読み込み（ローカル開発時のみ）
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    # Lambda環境では dotenv は不要
+    pass
 
 
 def calculate_affinities(primary: str, specialist_score: int) -> List[int]:
