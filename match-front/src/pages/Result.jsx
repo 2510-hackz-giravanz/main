@@ -2,7 +2,7 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { RadarChart } from '../components/ui/RadarChart';
-import { findPlayersByAnswers } from '../lib/api';
+import { matchPlayerWithDiagnosis } from '../lib/matching';
 
 export const Result = () => {
     const { state } = useLocation();
@@ -10,6 +10,9 @@ export const Result = () => {
     
     // 診断結果を取得
     const diagnosisResult = state?.diagnosisResult;
+    
+    console.log('診断結果全体:', diagnosisResult);
+    console.log('diagnosisResult?.primary:', diagnosisResult?.primary);
 
     // 診断結果がない場合はChatに戻す
     useEffect(() => {
@@ -33,23 +36,37 @@ export const Result = () => {
     const maxScore = Math.max(...values);
     const maxIndex = values.indexOf(maxScore);
     const maxType = labels[maxIndex];
+    
+    console.log('計算されたmaxType:', maxType);
 
     // 選手マッチング
     const [matchedPlayers, setMatchedPlayers] = useState([]);
     const [isCommentExpanded, setIsCommentExpanded] = useState(false);
+    const [isLoadingPlayer, setIsLoadingPlayer] = useState(false);
 
     useEffect(() => {
-        const answers = state?.questionAnswers || [];
-        findPlayersByAnswers(answers).then(setMatchedPlayers);
-    }, [state?.questionAnswers]);
+        if (maxType) {
+            console.log('maxTypeでマッチング開始:', maxType);
+            setIsLoadingPlayer(true);
+            matchPlayerWithDiagnosis(maxType).then(player => {
+                console.log('マッチした選手:', player);
+                if (player) {
+                    setMatchedPlayers([player]);
+                }
+                setIsLoadingPlayer(false);
+            }).catch(error => {
+                console.error('選手マッチングエラー:', error);
+                setMatchedPlayers([]);
+                setIsLoadingPlayer(false);
+            });
+        }
+    }, [maxType]);
 
-    // ダミーデータ（後で使用）
-    const guessed = {
-        name: 'FW 佐藤 太郎',
-        message: 'いつも応援ありがとう！次の試合も全力で！',
-        confidence: 0.92,
-        photo: 'https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=800&auto=format&fit=crop',
-    };
+    // マッチした選手を取得（デフォルト値を設定）
+    const matchedPlayer = matchedPlayers[0] || null;
+    
+    console.log('現在のmatchedPlayer:', matchedPlayer);
+    console.log('matchedPlayers配列:', matchedPlayers);
 
     return (
         <div style={{
@@ -61,37 +78,60 @@ export const Result = () => {
             <div style={{ width: '520px', maxWidth: '100%' }}>
                 <h1 style={{ fontSize: 28, marginBottom: 16, fontWeight: 700 }}>診断結果</h1>
 
-                {/* 既存のダミー表示 */}
-                <div style={{
-                    position: 'relative',
-                    width: '100%',
-                    aspectRatio: '1 / 1',
-                    borderRadius: 16,
-                    overflow: 'hidden',
-                    boxShadow: '0 8px 24px rgba(0,0,0,0.4)',
-                    border: '4px solid #facc15',
-                    marginBottom: 24,
-                }}>
-                    <img
-                        src={guessed.photo}
-                        alt={guessed.name}
-                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                    />
+                {/* マッチした選手の表示 */}
+                {isLoadingPlayer ? (
                     <div style={{
-                        position: 'absolute',
-                        bottom: 0,
-                        left: 0,
-                        width: '100%',
-                        background: 'linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0))',
-                        padding: '16px 12px',
-                        boxSizing: 'border-box',
-                        textAlign: 'left'
-                    }}> 
-                        {/* matchedPlayers[0]が存在する場合のみ表示 ? がないとバグるよ！ */}
-                        <div style={{ fontSize: 22, fontWeight: 700 }}>{matchedPlayers[0]?.name}</div>
-                        <div style={{ fontSize: 14, marginTop: 4, opacity: 0.9 }}>{guessed.message}</div>
+                        background: 'rgba(255,255,255,0.1)',
+                        borderRadius: 16,
+                        padding: '48px 24px',
+                        marginBottom: 24,
+                        textAlign: 'center'
+                    }}>
+                        <div style={{ fontSize: 18, opacity: 0.8 }}>選手をマッチング中...</div>
                     </div>
-                </div>
+                ) : matchedPlayer ? (
+                    <div style={{
+                        position: 'relative',
+                        width: '100%',
+                        aspectRatio: '1 / 1',
+                        borderRadius: 16,
+                        overflow: 'hidden',
+                        boxShadow: '0 8px 24px rgba(0,0,0,0.4)',
+                        border: '4px solid #facc15',
+                        marginBottom: 24,
+                    }}>
+                        <img
+                            src={matchedPlayer.photo || 'https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=800&auto=format&fit=crop'}
+                            alt={matchedPlayer.name}
+                            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                        />
+                        <div style={{
+                            position: 'absolute',
+                            bottom: 0,
+                            left: 0,
+                            width: '100%',
+                            background: 'linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0))',
+                            padding: '16px 12px',
+                            boxSizing: 'border-box',
+                            textAlign: 'left'
+                        }}> 
+                            <div style={{ fontSize: 22, fontWeight: 700 }}>{matchedPlayer.name}</div>
+                            <div style={{ fontSize: 14, marginTop: 4, opacity: 0.9 }}>
+                                {matchedPlayer.position} {matchedPlayer.nickname && `(${matchedPlayer.nickname})`}
+                            </div>
+                        </div>
+                    </div>
+                ) : (
+                    <div style={{
+                        background: 'rgba(255,255,255,0.1)',
+                        borderRadius: 16,
+                        padding: '48px 24px',
+                        marginBottom: 24,
+                        textAlign: 'center'
+                    }}>
+                        <div style={{ fontSize: 18, opacity: 0.8 }}>選手情報を読み込めませんでした</div>
+                    </div>
+                )}
 
                 {/* レーダーチャート */}
                 <div style={{ marginBottom: 24 }}>
@@ -199,24 +239,79 @@ export const Result = () => {
                         textAlign: 'left'
                     }}>
                         <h2 style={{ fontSize: 20, marginBottom: 16, fontWeight: 700 }}>マッチした選手</h2>
-                        <ul style={{ paddingLeft: 0, listStyle: 'none', margin: 0 }}>
-                            {matchedPlayers.map(p => (
-                                <li key={p.id} style={{ 
-                                    marginBottom: 12, 
-                                    padding: '12px',
-                                    background: 'rgba(255,255,255,0.05)',
-                                    borderRadius: 8,
-                                    border: '1px solid rgba(255,255,255,0.1)'
+                        {matchedPlayers.map(p => (
+                            <div key={p.id} style={{ 
+                                padding: '16px',
+                                background: 'rgba(255,255,255,0.05)',
+                                borderRadius: 8,
+                                border: '1px solid rgba(255,255,255,0.1)'
+                            }}>
+                                <div style={{ 
+                                    display: 'flex', 
+                                    alignItems: 'center',
+                                    marginBottom: 16 
                                 }}>
-                                    <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 4 }}>
-                                        {p.name}
+                                    {p.photo && (
+                                        <img 
+                                            src={p.photo} 
+                                            alt={p.name}
+                                            style={{
+                                                width: 80,
+                                                height: 80,
+                                                borderRadius: '50%',
+                                                objectFit: 'cover',
+                                                marginRight: 16,
+                                                border: '2px solid #facc15'
+                                            }}
+                                        />
+                                    )}
+                                    <div>
+                                        <div style={{ fontWeight: 700, fontSize: 20, marginBottom: 4 }}>
+                                            {p.name}
+                                        </div>
+                                        <div style={{ fontSize: 14, opacity: 0.8, marginBottom: 2 }}>
+                                            ポジション: {p.position}
+                                        </div>
+                                        {p.nickname && (
+                                            <div style={{ fontSize: 14, opacity: 0.8, color: '#facc15' }}>
+                                                ニックネーム: {p.nickname}
+                                            </div>
+                                        )}
                                     </div>
-                                    <div style={{ fontSize: 14, opacity: 0.9 }}>
-                                        {p.position} / {p.nationality} / 年齢: {p.age}
+                                </div>
+                                {p.description && (
+                                    <div style={{
+                                        fontSize: 14,
+                                        lineHeight: 1.6,
+                                        padding: 12,
+                                        background: 'rgba(0,0,0,0.2)',
+                                        borderRadius: 8,
+                                        marginBottom: 12
+                                    }}>
+                                        {p.description.title && (
+                                            <div style={{ fontWeight: 700, marginBottom: 8 }}>
+                                                {p.description.title}
+                                            </div>
+                                        )}
+                                        {p.description.text && (
+                                            <div>{p.description.text}</div>
+                                        )}
                                     </div>
-                                </li>
-                            ))}
-                        </ul>
+                                )}
+                                <div style={{ 
+                                    display: 'grid', 
+                                    gridTemplateColumns: '1fr 1fr', 
+                                    gap: 8,
+                                    fontSize: 13,
+                                    opacity: 0.9
+                                }}>
+                                    {p.birth && <div>生年月日: {p.birth}</div>}
+                                    {p.height && <div>身長: {p.height}cm</div>}
+                                    {p.weight && <div>体重: {p.weight}kg</div>}
+                                    {p.from && <div>出身: {p.from}</div>}
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 )}
 
