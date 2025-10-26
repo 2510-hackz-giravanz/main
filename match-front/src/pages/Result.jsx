@@ -43,6 +43,7 @@ export const Result = () => {
     const [matchedPlayers, setMatchedPlayers] = useState([]);
     const [isCommentExpanded, setIsCommentExpanded] = useState(false);
     const [isLoadingPlayer, setIsLoadingPlayer] = useState(false);
+    const [isPlayerDetailExpanded, setIsPlayerDetailExpanded] = useState(false);
 
     useEffect(() => {
         if (maxType) {
@@ -78,6 +79,11 @@ export const Result = () => {
             <div style={{ width: '520px', maxWidth: '100%' }}>
                 <h1 style={{ fontSize: 28, marginBottom: 16, fontWeight: 700 }}>診断結果</h1>
 
+                {/* レーダーチャート */}
+                <div style={{ marginBottom: 24 }}>
+                    <RadarChart labels={labels} values={values} max={100} size={400} />
+                </div>
+
                 {/* マッチした選手の表示 */}
                 {isLoadingPlayer ? (
                     <div style={{
@@ -90,44 +96,135 @@ export const Result = () => {
                         <div style={{ fontSize: 18, opacity: 0.8 }}>選手をマッチング中...</div>
                     </div>
                 ) : matchedPlayer ? (
-                    <div style={{
-                        position: 'relative',
-                        width: '100%',
-                        height: '500px',
-                        borderRadius: 16,
-                        overflow: 'hidden',
-                        boxShadow: '0 8px 24px rgba(0,0,0,0.4)',
-                        border: '4px solid #facc15',
-                        marginBottom: 24,
-                        background: 'rgba(0,0,0,0.3)',
-                    }}>
-                        <img
-                            src={matchedPlayer.photo || 'https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=800&auto=format&fit=crop'}
-                            alt={matchedPlayer.name}
-                            style={{ 
-                                width: '100%', 
-                                height: '100%',
-                                display: 'block',
-                                objectFit: 'cover',
-                                objectPosition: 'top center'
-                            }}
-                        />
+                    <>
                         <div style={{
-                            position: 'absolute',
-                            bottom: 0,
-                            left: 0,
-                            width: '100%',
-                            background: 'linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0) 100%)',
-                            padding: '24px 16px 16px',
-                            boxSizing: 'border-box',
-                            textAlign: 'left'
-                        }}> 
-                            <div style={{ fontSize: 24, fontWeight: 700, marginBottom: 6 }}>{matchedPlayer.name}</div>
-                            <div style={{ fontSize: 15, opacity: 0.95 }}>
-                                {matchedPlayer.position} {matchedPlayer.nickname && `(${matchedPlayer.nickname})`}
+                            background: 'rgba(255,255,255,0.1)',
+                            borderRadius: 16,
+                            backdropFilter: 'blur(6px)',
+                            border: '1px solid rgba(255,255,255,0.2)',
+                            marginBottom: 24,
+                            overflow: 'hidden',
+                        }}>
+                            {/* 選手画像 */}
+                            <div style={{
+                                position: 'relative',
+                                width: '100%',
+                                height: '500px',
+                                background: 'rgba(0,0,0,0.3)',
+                            }}>
+                                <img
+                                    src={matchedPlayer.photo || 'https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=800&auto=format&fit=crop'}
+                                    alt={matchedPlayer.name}
+                                    style={{ 
+                                        width: '100%', 
+                                        height: '100%',
+                                        display: 'block',
+                                        objectFit: 'cover',
+                                        objectPosition: 'top center'
+                                    }}
+                                />
+                                <div style={{
+                                    position: 'absolute',
+                                    bottom: 0,
+                                    left: 0,
+                                    width: '100%',
+                                    background: 'linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0) 100%)',
+                                    padding: '24px 16px 16px',
+                                    boxSizing: 'border-box',
+                                    textAlign: 'left'
+                                }}> 
+                                    <div style={{ 
+                                        fontSize: 18, 
+                                        fontWeight: 600, 
+                                        marginBottom: 8,
+                                        opacity: 0.9
+                                    }}>
+                                        {matchedPlayer.position}
+                                    </div>
+                                    <div style={{ fontSize: 28, fontWeight: 700, marginBottom: 8 }}>
+                                        {matchedPlayer.name}
+                                    </div>
+                                    {matchedPlayer.nickname && (
+                                        <div style={{ 
+                                            fontSize: 16, 
+                                            opacity: 0.95,
+                                            color: '#facc15'
+                                        }}>
+                                            ニックネーム: {matchedPlayer.nickname}
+                                        </div>
+                                    )}
+                                </div>
+                            </div>
+
+                            {/* 選手詳細情報（展開可能） */}
+                            <div style={{ padding: '24px', textAlign: 'left' }}>
+                                <button
+                                    onClick={() => setIsPlayerDetailExpanded(!isPlayerDetailExpanded)}
+                                    style={{
+                                        width: '100%',
+                                        padding: '12px',
+                                        borderRadius: 8,
+                                        background: 'rgba(250, 204, 21, 0.2)',
+                                        border: '1px solid #facc15',
+                                        color: '#facc15',
+                                        fontSize: 16,
+                                        fontWeight: 600,
+                                        cursor: 'pointer',
+                                        transition: 'all 0.2s ease',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'space-between',
+                                        marginBottom: isPlayerDetailExpanded ? 16 : 0
+                                    }}
+                                    onMouseEnter={e => {
+                                        e.target.style.background = 'rgba(250, 204, 21, 0.3)';
+                                    }}
+                                    onMouseLeave={e => {
+                                        e.target.style.background = 'rgba(250, 204, 21, 0.2)';
+                                    }}
+                                >
+                                    <span>選手の詳細情報</span>
+                                    <span>{isPlayerDetailExpanded ? '▲' : '▼'}</span>
+                                </button>
+
+                                {isPlayerDetailExpanded && (
+                                    <div>
+                                        {matchedPlayer.description && (
+                                            <div style={{
+                                                fontSize: 14,
+                                                lineHeight: 1.6,
+                                                padding: 12,
+                                                background: 'rgba(0,0,0,0.2)',
+                                                borderRadius: 8,
+                                                marginBottom: 12
+                                            }}>
+                                                {matchedPlayer.description.title && (
+                                                    <div style={{ fontWeight: 700, marginBottom: 8 }}>
+                                                        {matchedPlayer.description.title}
+                                                    </div>
+                                                )}
+                                                {matchedPlayer.description.text && (
+                                                    <div>{matchedPlayer.description.text}</div>
+                                                )}
+                                            </div>
+                                        )}
+                                        <div style={{ 
+                                            display: 'grid', 
+                                            gridTemplateColumns: '1fr 1fr', 
+                                            gap: 8,
+                                            fontSize: 13,
+                                            opacity: 0.9
+                                        }}>
+                                            {matchedPlayer.birth && <div>生年月日: {matchedPlayer.birth}</div>}
+                                            {matchedPlayer.height && <div>身長: {matchedPlayer.height}cm</div>}
+                                            {matchedPlayer.weight && <div>体重: {matchedPlayer.weight}kg</div>}
+                                            {matchedPlayer.from && <div>出身: {matchedPlayer.from}</div>}
+                                        </div>
+                                    </div>
+                                )}
                             </div>
                         </div>
-                    </div>
+                    </>
                 ) : (
                     <div style={{
                         background: 'rgba(255,255,255,0.1)',
@@ -139,11 +236,6 @@ export const Result = () => {
                         <div style={{ fontSize: 18, opacity: 0.8 }}>選手情報を読み込めませんでした</div>
                     </div>
                 )}
-
-                {/* レーダーチャート */}
-                <div style={{ marginBottom: 24 }}>
-                    <RadarChart labels={labels} values={values} max={100} size={400} />
-                </div>
 
                 {/* スコア詳細 */}
                 <div style={{
@@ -231,95 +323,6 @@ export const Result = () => {
                         >
                             {isCommentExpanded ? '▲ 閉じる' : '▼ 続きを読む'}
                         </button>
-                    </div>
-                )}
-
-                {/* 選手マッチング表示 */}
-                {matchedPlayers.length > 0 && (
-                    <div style={{
-                        background: 'rgba(255,255,255,0.1)',
-                        borderRadius: 16,
-                        padding: '24px',
-                        backdropFilter: 'blur(6px)',
-                        border: '1px solid rgba(255,255,255,0.2)',
-                        marginBottom: 24,
-                        textAlign: 'left'
-                    }}>
-                        <h2 style={{ fontSize: 20, marginBottom: 16, fontWeight: 700 }}>マッチした選手</h2>
-                        {matchedPlayers.map(p => (
-                            <div key={p.id} style={{ 
-                                padding: '16px',
-                                background: 'rgba(255,255,255,0.05)',
-                                borderRadius: 8,
-                                border: '1px solid rgba(255,255,255,0.1)'
-                            }}>
-                                <div style={{ 
-                                    display: 'flex', 
-                                    alignItems: 'center',
-                                    marginBottom: 16 
-                                }}>
-                                    {p.photo && (
-                                        <img 
-                                            src={p.photo} 
-                                            alt={p.name}
-                                            style={{
-                                                width: 80,
-                                                height: 80,
-                                                borderRadius: '50%',
-                                                objectFit: 'cover',
-                                                objectPosition: 'top center',
-                                                marginRight: 16,
-                                                border: '2px solid #facc15'
-                                            }}
-                                        />
-                                    )}
-                                    <div>
-                                        <div style={{ fontWeight: 700, fontSize: 20, marginBottom: 4 }}>
-                                            {p.name}
-                                        </div>
-                                        <div style={{ fontSize: 14, opacity: 0.8, marginBottom: 2 }}>
-                                            ポジション: {p.position}
-                                        </div>
-                                        {p.nickname && (
-                                            <div style={{ fontSize: 14, opacity: 0.8, color: '#facc15' }}>
-                                                ニックネーム: {p.nickname}
-                                            </div>
-                                        )}
-                                    </div>
-                                </div>
-                                {p.description && (
-                                    <div style={{
-                                        fontSize: 14,
-                                        lineHeight: 1.6,
-                                        padding: 12,
-                                        background: 'rgba(0,0,0,0.2)',
-                                        borderRadius: 8,
-                                        marginBottom: 12
-                                    }}>
-                                        {p.description.title && (
-                                            <div style={{ fontWeight: 700, marginBottom: 8 }}>
-                                                {p.description.title}
-                                            </div>
-                                        )}
-                                        {p.description.text && (
-                                            <div>{p.description.text}</div>
-                                        )}
-                                    </div>
-                                )}
-                                <div style={{ 
-                                    display: 'grid', 
-                                    gridTemplateColumns: '1fr 1fr', 
-                                    gap: 8,
-                                    fontSize: 13,
-                                    opacity: 0.9
-                                }}>
-                                    {p.birth && <div>生年月日: {p.birth}</div>}
-                                    {p.height && <div>身長: {p.height}cm</div>}
-                                    {p.weight && <div>体重: {p.weight}kg</div>}
-                                    {p.from && <div>出身: {p.from}</div>}
-                                </div>
-                            </div>
-                        ))}
                     </div>
                 )}
 
