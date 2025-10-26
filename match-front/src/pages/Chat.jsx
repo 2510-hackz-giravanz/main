@@ -107,7 +107,9 @@ export const Chat = () => {
                     borderRadius: '1rem',
                     backdropFilter: 'blur(6px)'
                 }}>
-                    <div style={{ width: '64px', height: '64px', margin: '0 auto 16px', borderRadius: '50%', border: '4px solid rgba(255,255,255,0.3)', borderTopColor: '#facc15', animation: 'spin 1s linear infinite' }}></div>
+                    <div style={{ width: '64px', height: '64px', margin: '0 auto 16px', borderRadius: '50%', borderTopColor: '#facc15', animation: 'spin 1s linear infinite' }}><span style={{ fontSize: '3rem' }}>
+                                <img src="./ball-Photoroom.png" alt="Giravanzロゴ" style={{ width: '3rem', height: '3rem', display: 'block', margin: '0 auto' }} />
+                            </span></div>
                     <p style={{ fontSize: '1.2rem', color: '#fef9c3', marginBottom: '0.5rem' }}>読み込み中...</p>
                     <style>{`@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }`}</style>
                 </div>
