@@ -210,6 +210,47 @@ function extractDescription(document) {
   };
 }
 
+function extractPhoto(document) {
+  // 選手ページの画像を探す
+  // 1. p-topteam__player-bg 内の img (背景画像)
+  const bgImg = document.querySelector('.p-topteam__player-bg img');
+  if (bgImg) {
+    const src = bgImg.getAttribute('src');
+    if (src && !src.includes('logo') && !src.includes('icon')) {
+      return src.startsWith('http') ? src : `https://www.giravanz.jp${src}`;
+    }
+  }
+  
+  // 2. data-a-inview="mask-t" を持つ div 内の img
+  const maskImg = document.querySelector('[data-a-inview="mask-t"] img');
+  if (maskImg) {
+    const src = maskImg.getAttribute('src');
+    if (src && !src.includes('logo') && !src.includes('icon')) {
+      return src.startsWith('http') ? src : `https://www.giravanz.jp${src}`;
+    }
+  }
+  
+  // 3. /assets/img/topteam/staff_player/ を含む img を探す
+  const allImgs = [...document.querySelectorAll('img')];
+  for (const img of allImgs) {
+    const src = img.getAttribute('src');
+    if (src && src.includes('/assets/img/topteam/staff_player/')) {
+      return src.startsWith('http') ? src : `https://www.giravanz.jp${src}`;
+    }
+  }
+  
+  // 4. og:image メタタグ (フォールバック)
+  const ogImage = document.querySelector('meta[property="og:image"]');
+  if (ogImage) {
+    const content = ogImage.getAttribute('content');
+    if (content) {
+      return content.startsWith('http') ? content : `https://www.giravanz.jp${content}`;
+    }
+  }
+  
+  return null;
+}
+
 const splitList = (s) =>
   String(s)
     .split(/[、,／/・]|[\s]*\|\s*/g)
@@ -361,6 +402,7 @@ async function scrapeOne(playerInfo) {
   const { height, weight } = extractHeightWeight(document);
   const from = extractFrom(document);
   const description = extractDescription(document);
+  const photo = extractPhoto(document);
   const qa = extractQAs(document);
   const status = extractStatus(document);
 
@@ -373,6 +415,7 @@ async function scrapeOne(playerInfo) {
     weight,
     from,
     description,
+    photo,
     ...qa,
     status,
     _source: url,

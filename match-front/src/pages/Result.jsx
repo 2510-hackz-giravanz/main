@@ -93,30 +93,37 @@ export const Result = () => {
                     <div style={{
                         position: 'relative',
                         width: '100%',
-                        aspectRatio: '1 / 1',
+                        height: '500px',
                         borderRadius: 16,
                         overflow: 'hidden',
                         boxShadow: '0 8px 24px rgba(0,0,0,0.4)',
                         border: '4px solid #facc15',
                         marginBottom: 24,
+                        background: 'rgba(0,0,0,0.3)',
                     }}>
                         <img
                             src={matchedPlayer.photo || 'https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=800&auto=format&fit=crop'}
                             alt={matchedPlayer.name}
-                            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                            style={{ 
+                                width: '100%', 
+                                height: '100%',
+                                display: 'block',
+                                objectFit: 'cover',
+                                objectPosition: 'top center'
+                            }}
                         />
                         <div style={{
                             position: 'absolute',
                             bottom: 0,
                             left: 0,
                             width: '100%',
-                            background: 'linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0))',
-                            padding: '16px 12px',
+                            background: 'linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0) 100%)',
+                            padding: '24px 16px 16px',
                             boxSizing: 'border-box',
                             textAlign: 'left'
                         }}> 
-                            <div style={{ fontSize: 22, fontWeight: 700 }}>{matchedPlayer.name}</div>
-                            <div style={{ fontSize: 14, marginTop: 4, opacity: 0.9 }}>
+                            <div style={{ fontSize: 24, fontWeight: 700, marginBottom: 6 }}>{matchedPlayer.name}</div>
+                            <div style={{ fontSize: 15, opacity: 0.95 }}>
                                 {matchedPlayer.position} {matchedPlayer.nickname && `(${matchedPlayer.nickname})`}
                             </div>
                         </div>
@@ -260,6 +267,7 @@ export const Result = () => {
                                                 height: 80,
                                                 borderRadius: '50%',
                                                 objectFit: 'cover',
+                                                objectPosition: 'top center',
                                                 marginRight: 16,
                                                 border: '2px solid #facc15'
                                             }}
