@@ -76,7 +76,7 @@ export const Result = () => {
             display: 'flex', alignItems: 'center', justifyContent: 'center',
             padding: 16, color: 'white', textAlign: 'center'
         }}>
-            <div style={{ width: '520px', maxWidth: '100%' }}>
+            <div style={{ width: '100%', maxWidth: 520, minWidth: 280, margin: '0 auto' }}>
                 <h1 style={{ fontSize: 28, marginBottom: 16, fontWeight: 700 }}>診断結果</h1>
 
                 {/* レーダーチャート */}
