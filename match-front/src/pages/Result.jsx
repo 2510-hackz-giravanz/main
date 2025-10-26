@@ -74,14 +74,14 @@ export const Result = () => {
             minHeight: '100vh',
             background: 'linear-gradient(to bottom right, #dc2626, #f59e0b, #ea580c)',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
-            padding: 16, color: 'white', textAlign: 'center'
+            padding: '1rem 1rem 2rem', color: 'white', textAlign: 'center'
         }}>
-            <div style={{ width: '100%', maxWidth: 520, minWidth: 280, margin: '0 auto' }}>
+            <div style={{ width: '100%', maxWidth: '480px', margin: '0 auto' }}>
                 <h1 style={{ fontSize: 28, marginBottom: 16, fontWeight: 700 }}>診断結果</h1>
 
                 {/* レーダーチャート */}
                 <div style={{ marginBottom: 24 }}>
-                    <RadarChart labels={labels} values={values} max={100} size={400} />
+                    <RadarChart labels={labels} values={values} max={100} size={320} />
                 </div>
 
                 {/* マッチした選手の表示 */}
@@ -109,7 +109,7 @@ export const Result = () => {
                             <div style={{
                                 position: 'relative',
                                 width: '100%',
-                                height: '500px',
+                                height: 'min(500px, 60vh)',
                                 background: 'rgba(0,0,0,0.3)',
                             }}>
                                 <img

@@ -62,8 +62,9 @@ export const RadarChart = ({ labels, values, max = 100, size = 320 }) => {
     return (
         <div
             style={{
-                width: size,
-                height: size,
+                width: '100%',
+                maxWidth: size,
+                aspectRatio: '1 / 1',
                 margin: "0 auto",
                 filter: "drop-shadow(0 10px 24px rgba(0,0,0,0.35))",
             }}

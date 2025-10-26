@@ -26,17 +26,22 @@ cp terraform.tfvars.example terraform.tfvars
 # 必要に応じて terraform.tfvars を編集
 ```
 
-#### 3. デプロイプラン確認
+#### 3. Lambda デプロイパッケージのビルド
+```bash
+./build-lambda.sh
+```
+
+#### 4. デプロイプラン確認
 ```bash
 terraform plan
 ```
 
-#### 4. デプロイ実行
+#### 5. デプロイ実行
 ```bash
 terraform apply
 ```
 
-#### 5. Google API Key を手動設定
+#### 6. Google API Key を手動設定
 Terraform は Secret の箱のみを作成します。実際の API キーは手動で設定してください:
 
 ```bash
@@ -49,7 +54,7 @@ aws secretsmanager put-secret-value \
   --secret-string "{\"GOOGLE_API_KEY\":\"YOUR_ACTUAL_API_KEY_HERE\"}"
 ```
 
-#### 6. 確認
+#### 7. 確認
 ```bash
 # Secret が作成されたことを確認
 aws secretsmanager describe-secret --secret-id $(terraform output -raw secret_name)

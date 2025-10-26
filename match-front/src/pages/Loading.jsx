@@ -40,12 +40,12 @@ export const Loading = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          padding: 16,
+          padding: '1rem 1rem 2rem',
           color: "white",
           textAlign: "center",
         }}
       >
-  <div style={{ width: '100%', maxWidth: 520, minWidth: 280, margin: '0 auto', boxSizing: 'border-box', padding: '2rem 1rem' }}>
+  <div style={{ width: '100%', maxWidth: '480px', margin: '0 auto', boxSizing: 'border-box', padding: '2rem 1rem' }}>
           <h1 style={{ fontSize: 28, marginBottom: 16, fontWeight: 700 }}>エラーが発生しました</h1>
           <p style={{ color: "#fef9c3", marginBottom: 24 }}>
             {error}
@@ -62,7 +62,6 @@ export const Loading = () => {
               fontWeight: "bold",
               cursor: "pointer",
               width: "100%",
-              maxWidth: 360,
               boxShadow: "0 6px 16px rgba(0,0,0,0.3)",
             }}
           >
@@ -83,12 +82,12 @@ export const Loading = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        padding: 16,
+        padding: '1rem 1rem 2rem',
         color: "white",
         textAlign: "center",
       }}
     >
-  <div style={{ width: '100%', maxWidth: 520, minWidth: 280, margin: '0 auto', boxSizing: 'border-box', padding: '2rem 1rem' }}>
+  <div style={{ width: '100%', maxWidth: '480px', margin: '0 auto', boxSizing: 'border-box', padding: '2rem 1rem' }}>
         {/* スピナー */}
         <div
           style={{
@@ -103,7 +102,7 @@ export const Loading = () => {
           }}
         />
 
-        <h1 style={{ width: '500px', fontSize: 28, marginBottom: 8, fontWeight: 700 }}>マッチング中…</h1>
+        <h1 style={{ fontSize: 28, marginBottom: 8, fontWeight: 700 }}>マッチング中…</h1>
         <p style={{ color: "#fef9c3", marginBottom: 24 }}>
           AIがあなたの回答をもとに結果を生成しています  
         </p>

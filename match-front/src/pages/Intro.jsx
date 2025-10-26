@@ -5,6 +5,12 @@ import { useNavigate } from 'react-router-dom';
 export const Intro = () => {
     const navigate = useNavigate();
 
+    const handleStart = () => {
+        // 質問キャッシュをクリアして新しい診断を開始
+        sessionStorage.removeItem('questions');
+        navigate('/chat');
+    };
+
     return (
         <div
             style={{
@@ -13,11 +19,11 @@ export const Intro = () => {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                padding: '1rem',
+                padding: '1rem 1rem 2rem',
                 color: 'white',
             }}
         >
-            <div style={{ width: '520px', maxWidth: '100%' }}>
+            <div style={{ width: '100%', maxWidth: '480px' }}>
                 {/* Header（Chat/Resultとトーン統一） */}
                 <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
                     <div
@@ -50,8 +56,7 @@ export const Intro = () => {
 
                         </div>
                     </div>
-                    <h1 style={{ fontSize: '2.2rem', fontWeight: 800, marginBottom: 6 }}>ギラヴァンツ北九州 マッチング</h1>
-                    <p style={{ color: '#fef9c3' }}>あなたの回答から、ピッタリの選手を推測します</p>
+                    <h1 style={{ fontSize: '2.2rem', fontWeight: 800, marginBottom: 6 }}>球見式診断</h1>
                 </div>
 
                 {/* 説明カード */}
@@ -71,20 +76,10 @@ export const Intro = () => {
                         <li>最後に「結果を見る」を押すと、推測結果が表示されます</li>
                         <li>結果では選手の写真（四角）に、名前とメッセージが表示されます</li>
                     </ol>
-
                     <div style={{ height: 12 }} />
-
-                    <h2 style={{ fontSize: 20, marginBottom: 8, fontWeight: 700 }}>注意事項</h2>
-                    <ul style={{ margin: 0, paddingLeft: '1.2rem', lineHeight: 1.7 }}>
-                        <li>選手名・メッセージはデモ用です。API接続後に正式データを表示します。</li>
-                        <li>途中で戻ることも可能です（「前の質問に戻る」ボタン）。</li>
-                    </ul>
-
-                    <div style={{ height: 16 }} />
-
                     <div style={{ textAlign: 'center' }}>
                         <button
-                            onClick={() => navigate('/chat')}
+                            onClick={handleStart}
                             style={{
                                 padding: '0.9rem 1.5rem',
                                 borderRadius: 10,
@@ -93,7 +88,8 @@ export const Intro = () => {
                                 color: 'white',
                                 fontWeight: 800,
                                 cursor: 'pointer',
-                                minWidth: 220,
+                                width: '100%',
+                                maxWidth: '280px',
                                 boxShadow: '0 6px 16px rgba(0,0,0,0.35)',
                             }}
                         >

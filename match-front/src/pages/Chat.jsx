@@ -26,8 +26,30 @@ export const Chat = () => {
 
     // 質問データを取得
     useEffect(() => {
+        // キャッシュをチェック
+        const cachedQuestions = sessionStorage.getItem('questions');
+        if (cachedQuestions) {
+            try {
+                const data = JSON.parse(cachedQuestions);
+                setQuestions(data);
+                // 各質問の選択肢をシャッフルし、元のインデックスとのマッピングを保存
+                const shuffledMappings = data.map(q => {
+                    const indices = q.choices.map((_, i) => i);
+                    return shuffleArray(indices);
+                });
+                setShuffledChoices(shuffledMappings);
+                setIsLoading(false);
+                return;
+            } catch (e) {
+                console.error('Failed to parse cached questions:', e);
+                sessionStorage.removeItem('questions');
+            }
+        }
+
+        // キャッシュがない場合のみAPIを呼ぶ
         fetchQuestions()
             .then(data => {
+                sessionStorage.setItem('questions', JSON.stringify(data));
                 setQuestions(data);
                 // 各質問の選択肢をシャッフルし、元のインデックスとのマッピングを保存
                 const shuffledMappings = data.map(q => {
@@ -59,15 +81,7 @@ export const Chat = () => {
         }
     };
 
-    const handleRestart = () => {
-        setCurrentQuestionIndex(0);
-        setAnswers([]);
-        setIsComplete(false);
-    };
-
     const handleGoResult = () => {
-        // const snapshot = answers.slice();
-
         // API送信用のデータ形式に変換
         const questionAnswers = answers.map((selectedIndex, i) => ({
             question: questions[i],
@@ -75,37 +89,26 @@ export const Chat = () => {
         }));
 
         navigate("/loading", { state: { questionAnswers } });
-
-        handleRestart();
+        
+        // handleRestart(); ← 削除: navigate後なので不要
     }
-
-    const handleBack = () => {
-        if (currentQuestionIndex > 0) {
-            setCurrentQuestionIndex(currentQuestionIndex - 1);
-            setAnswers(answers.slice(0, -1));
-        }
-    };
 
     // ローディング中または質問が空の場合
     if (isLoading || questions.length === 0) {
         return (
-            <div style={{ minHeight: '100vh', background: 'linear-gradient(to bottom right, #dc2626, #f59e0b, #ea580c)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '1rem', color: 'white' }}>
+            <div style={{ minHeight: '100vh', background: 'linear-gradient(to bottom right, #dc2626, #f59e0b, #ea580c)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white' }}>
                 <div style={{
                     textAlign: 'center',
                     width: '100%',
-                    maxWidth: 600,
-                    minWidth: 320,
+                    maxWidth: '480px',
                     margin: '0 auto',
                     boxSizing: 'border-box',
                     padding: '2.5rem 1.5rem',
                     borderRadius: '1rem',
-                    background: 'rgba(255,255,255,0.08)',
-                    boxShadow: '0 0 20px rgba(0,0,0,0.18)',
-                    border: '1px solid rgba(255,255,255,0.18)',
                     backdropFilter: 'blur(6px)'
                 }}>
                     <div style={{ width: '64px', height: '64px', margin: '0 auto 16px', borderRadius: '50%', border: '4px solid rgba(255,255,255,0.3)', borderTopColor: '#facc15', animation: 'spin 1s linear infinite' }}></div>
-                    <p style={{ minWidth: '400px', fontSize: '1.2rem', color: '#fef9c3', marginBottom: '0.5rem' }}>質問を生成中...</p>
+                    <p style={{ fontSize: '1.2rem', color: '#fef9c3', marginBottom: '0.5rem' }}>読み込み中...</p>
                     <style>{`@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }`}</style>
                 </div>
             </div>
@@ -115,8 +118,8 @@ export const Chat = () => {
     // エラー時
     if (error) {
         return (
-            <div style={{ minHeight: '100vh', background: 'linear-gradient(to bottom right, #dc2626, #f59e0b, #ea580c)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '1rem', color: 'white' }}>
-                <div style={{ textAlign: 'center', maxWidth: '520px' }}>
+            <div style={{ minHeight: '100vh', background: 'linear-gradient(to bottom right, #dc2626, #f59e0b, #ea580c)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '1rem 1rem 2rem', color: 'white' }}>
+                <div style={{ textAlign: 'center', width: '100%', maxWidth: '480px', margin: '0 auto' }}>
                     <h2 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>エラーが発生しました</h2>
                     <p style={{ marginBottom: '1.5rem' }}>{error}</p>
                     <button
@@ -139,21 +142,8 @@ export const Chat = () => {
     }
 
     return (
-        <div style={{ minHeight: '100vh', background: 'linear-gradient(to bottom right, #dc2626, #f59e0b, #ea580c)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '1rem' }}>
-
-            <div style={{ width: '100%', maxWidth: 520, minWidth: 280, textAlign: 'center', color: 'white', margin: '0 auto' }}>
-                <div style={{ marginBottom: '2rem' }}>
-                    <div style={{ width: '8rem', height: '8rem', margin: '0 auto 1rem', borderRadius: '50%', background: 'linear-gradient(to bottom right, #facc15, #dc2626)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 0 40px rgba(0,0,0,0.5)' }}>
-                        <div style={{ width: '6rem', height: '6rem', borderRadius: '50%', background: 'rgba(255,255,255,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                            <span style={{ fontSize: '3rem' }}>
-                                <img src="https://www.giravanz.jp/assets/img/common/logo-giravanz.svg" alt="Giravanzロゴ" style={{ width: '3rem', height: '3rem', display: 'block', margin: '0 auto' }} />
-                            </span>
-                        </div>
-                    </div>
-                    <h1 style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>ギラヴァンツ北九州</h1>
-                    <p style={{ color: '#fef9c3' }}>選手とのマッチング中...</p>
-                </div>
-
+        <div style={{ minHeight: '100vh', background: 'linear-gradient(to bottom right, #dc2626, #f59e0b, #ea580c)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '1rem 1rem 2rem' }}>
+            <div style={{ width: '100%', maxWidth: '480px', textAlign: 'center', color: 'white', margin: '0 auto' }}>
                 {!isComplete ? (
                     <>
                         <div style={{ marginBottom: '1.5rem' }}>
@@ -166,20 +156,11 @@ export const Chat = () => {
                             <div style={{ width: '100%', height: '8px', background: 'rgba(0,0,0,0.3)', borderRadius: '9999px', overflow: 'hidden' }}>
                                 <div style={{ height: '100%', width: `${((currentQuestionIndex + 1) / questions.length) * 100}%`, background: 'linear-gradient(to right, #facc15, white)', transition: 'width 0.4s ease' }}></div>
                             </div>
-                            {/* 前に戻るボタン */}
-                            {currentQuestionIndex > 0 && (
-                                <button
-                                    onClick={handleBack}
-                                    style={{ marginTop: '0.75rem', background: '#dc2626', color: 'white', border: '2px solid #facc15', padding: '0.25rem 0.75rem', fontSize: '0.9rem', cursor: 'pointer', borderRadius: '0.375rem' }}
-                                >
-                                    ← 前の質問に戻る
-                                </button>
-                            )}
                         </div>
 
                         {/* 質問 */}
-                        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1.5rem' }}>
-                            <div style={{ width: '100%', maxWidth: 520, minWidth: 220, background: 'rgba(255,255,255,0.1)', borderRadius: '1rem', padding: '2rem 1rem', backdropFilter: 'blur(6px)', border: '1px solid rgba(255,255,255,0.2)', boxShadow: '0 0 20px rgba(0,0,0,0.3)' }}>
+                        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1rem' }}>
+                            <div style={{ width: '100%', background: 'rgba(255,255,255,0.1)', borderRadius: '1rem', padding: '1rem 1rem', backdropFilter: 'blur(6px)', border: '1px solid rgba(255,255,255,0.2)', boxShadow: '0 0 20px rgba(0,0,0,0.3)' }}>
                                 <h2 style={{ fontSize: '1.5rem', marginBottom: '1rem', wordWrap: 'break-word' }}>{currentQuestion.question_text}</h2>
                             </div>
                         </div>
@@ -190,7 +171,27 @@ export const Chat = () => {
                                 <button
                                     key={displayIndex}
                                     onClick={() => handleAnswer(displayIndex)}
-                                    style={{ width: '100%', maxWidth: 520, minWidth: 180, height: '3.5rem', fontSize: '1.1rem', background: 'white', color: '#dc2626', border: '2px solid #facc15', borderRadius: '0.5rem', cursor: 'pointer', fontWeight: 'bold', boxShadow: '0 4px 10px rgba(0,0,0,0.2)', transition: 'transform 0.15s ease, box-shadow 0.15s ease' }}
+                                    style={{ 
+                                        width: '100%', 
+                                        minHeight: '3.5rem', 
+                                        padding: '0.75rem 1rem',
+                                        fontSize: '1.1rem', 
+                                        background: 'white', 
+                                        color: '#dc2626', 
+                                        border: '2px solid #facc15', 
+                                        borderRadius: '0.5rem', 
+                                        cursor: 'pointer', 
+                                        fontWeight: 'bold', 
+                                        boxShadow: '0 4px 10px rgba(0,0,0,0.2)', 
+                                        transition: 'transform 0.15s ease, box-shadow 0.15s ease',
+                                        whiteSpace: 'normal',
+                                        wordWrap: 'break-word',
+                                        lineHeight: 1.4,
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        textAlign: 'center'
+                                    }}
                                     onMouseOver={(e) => {
                                         e.currentTarget.style.transform = 'scale(1.05)';
                                         e.currentTarget.style.boxShadow = '0 6px 16px rgba(0,0,0,0.3)';
@@ -220,8 +221,6 @@ export const Chat = () => {
                                 color: "white",
                                 fontWeight: "bold",
                                 width: '100%',
-                                maxWidth: 720,
-                                minWidth: 500,
                                 boxSizing: 'border-box',
                                 marginLeft: 'auto',
                                 marginRight: 'auto',

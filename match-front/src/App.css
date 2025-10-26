@@ -1,10 +1,4 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
+/* スマホ想定、デスクトップでもスマホっぽく表示 */
 
 html, body {
   margin: 0;
